@@ -1,21 +1,32 @@
-@import "fonts";
+// ========================
+// GLOBAL
+// ========================
+@import "globals/fonts";
+@import "globals/theme";
+@import "globals/reset";
+@import "globals/logomark";
+@import "globals/typography";
 
-// You can modify the theme directly, or override some of the variables
-// Overrides just need placed prior to the theme import
-// For example:
-// $color-primary: #3a0;
-@import "theme";
-@import "reset";
-@import "logomark";
-@import "typography";
-@import "layout";
-@import "header";
-@import "nav";
-@import "about";
-@import "guidelines";
-@import "contribute";
-@import "files";
-@import "styles";
-@import "profile";
-@import "footer";
-@import "links";
+// ========================
+// COMPOSITION
+// ========================
+@import "compositions/layout";
+
+// ========================
+// UTILITY
+// ========================
+// Utilities will be added here as mixins
+
+// ========================
+// BLOCKS
+// ========================
+@import "blocks/header";
+@import "blocks/nav";
+@import "blocks/about";
+@import "blocks/guidelines";
+@import "blocks/contribute";
+@import "blocks/files";
+@import "blocks/styles";
+@import "blocks/profile";
+@import "blocks/footer";
+@import "blocks/links";
