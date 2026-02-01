@@ -1,13 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500&display=swap");
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Press+Start+2P&display=swap");
 :root {
-  --color-primary: #3a00ff;
-  --color-primary-alt: #6f6ffd;
-  --color-secondary: #d42257;
-  --color-background: #d2fbf7;
-  --color-text: #412d86;
-  --color-light: #fff;
-  --color-anchor: #3a00ff;
-  --font-family: "Baloo 2", sans-serif;
+  --color-primary: #526cff;
+  --color-primary-alt: #D9B036;
+  --color-secondary: #d92B2B;
+  --color-background: #131311;
+  --color-text: #3b4db1;
+  --color-light: #D9CD2B;
+  --color-anchor: #526cff;
+  --font-family: "Orbitron", sans-serif;
   --font-weight-strong: 500;
   --font-size-h1: 6rem;
   --font-size-h2: 3rem;
