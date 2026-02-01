@@ -4,7 +4,6 @@
 @import "globals/fonts";
 @import "globals/theme";
 @import "globals/reset";
-@import "globals/logomark";
 @import "globals/typography";
 
 // ========================
@@ -16,6 +15,7 @@
 // UTILITY
 // ========================
 // Utilities will be added here as mixins
+@import "utilities/logomark";
 
 // ========================
 // BLOCKS
