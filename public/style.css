@@ -78,3 +78,43 @@ select {
     scroll-behavior: auto !important;
   }
 }
+body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header {
+  margin-left: 100px;
+  width: calc(100% - 100px);
+}
+
+nav {
+  margin-left: 100px;
+  margin-right: 100px;
+  width: calc(100% - 100px);
+}
+
+main {
+  margin-right: 100px;
+  width: calc(100% - 100px);
+}
+
+aside.profile {
+  margin-left: 100px;
+  width: calc((100% - (100px * 2)) / 2);
+}
+
+aside#styles {
+  margin-right: 100px;
+  width: calc((100% - (100px * 2)) / 2);
+}
+
+footer {
+  margin-left: 100px;
+  width: calc(100% - 100px);
+}
+
+svg {
+  width: 50px;
+  height: 50px;
+}
