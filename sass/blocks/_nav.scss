@@ -1,0 +1,20 @@
+nav {
+    ul {
+        li {
+            transform: rotate(-35deg);
+            font-size: small;
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+
+        display: flex;
+        justify-content: space-evenly;
+        list-style: none;
+    }
+    
+    padding: 15px;
+    background-color: red;
+    clip-path: polygon(0% 100%, 15% 0%, 100% 0%, 85% 100%);
+}

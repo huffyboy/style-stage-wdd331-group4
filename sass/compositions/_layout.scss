@@ -11,9 +11,10 @@ header {
 }
 
 nav {
-    margin-left: $cabinet-space;
-    margin-right: $cabinet-space;
-    width: calc(100% - #{$cabinet-space});
+    // margin-left: $cabinet-space;
+    // margin-right: $cabinet-space;
+    // width: calc(100% - #{$cabinet-space});
+    width: 100%;
 }
 
 main {
