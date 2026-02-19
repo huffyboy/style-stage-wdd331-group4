@@ -7,7 +7,8 @@
   --color-text: #3b4db1;
   --color-light: #D9CD2B;
   --color-anchor: #526cff;
-  --font-family: "Orbitron", sans-serif;
+  --font-family: "Press Start 2P", monospace;
+  --font-family-heading: "Orbitron", sans-serif;
   --font-weight-strong: 500;
   --font-size-h1: 6rem;
   --font-size-h2: 3rem;
@@ -38,8 +39,6 @@ h5,
 h6 {
   margin: 0;
   font-family: var(--font-family);
-  background-color: #D9B036;
-  color: #131311;
 }
 
 html {
@@ -79,8 +78,25 @@ select {
   }
 }
 body {
+  font-family: var(--font-family);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-family-heading);
+}
+
+body {
+  background-color: #D9B036;
+  color: #131311;
+}
+
+body {
   display: flex;
   flex-wrap: wrap;
+  padding: 1.5rem;
 }
 
 header {
@@ -115,6 +131,6 @@ footer {
 }
 
 svg {
-  width: 50px;
-  height: 50px;
+  width: 1em;
+  height: 1em;
 }

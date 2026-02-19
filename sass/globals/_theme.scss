@@ -58,7 +58,8 @@ $font-sizes: (
   }
 
   --color-anchor: #{$link-color};
-  --font-family: "Orbitron", sans-serif;;
+  --font-family: "Press Start 2P", monospace;
+  --font-family-heading: "Orbitron", sans-serif;
   --font-weight-strong: #{$font-weight-strong};
 
   @each $key, $size in $font-sizes {
