@@ -4,3 +4,13 @@
 *.log
 .htaccess
 node_modules/
+
+# Temporary / reference (not for commit)
+temp/
+*.bak
+*.tmp
+*~
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

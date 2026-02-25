@@ -1,13 +1,17 @@
-$cabinet-space: 100px;
+// Space at the edge of the screen, outside the cabinet (viewport → cabinet gap)
+$cabinet-edge-margin: 1.5rem;
+// Width of the cabinet’s side (3D “thickness” that insets content from the cabinet frame)
+$cabinet-side-width: 100px;
 
 body {
     display: flex;
     flex-wrap: wrap;
+    padding: $cabinet-edge-margin;
 }
 
 header {
-    margin-left: $cabinet-space;
-    width: calc(100% - #{$cabinet-space});
+    margin-left: $cabinet-side-width;
+    width: calc(100% - #{$cabinet-side-width});
 }
 
 nav {
@@ -19,29 +23,29 @@ nav {
 }
 
 main {
-    margin-right: $cabinet-space;
-    width: calc(100% - #{$cabinet-space});
+    margin-right: $cabinet-side-width;
+    width: calc(100% - #{$cabinet-side-width});
 }
 
 aside.profile {
-    margin-left: $cabinet-space;
-    width: calc((100% - (#{$cabinet-space} * 2)) / 2);
+    margin-left: $cabinet-side-width;
+    width: calc((100% - (#{$cabinet-side-width} * 2)) / 2);
 }
 
 aside#styles {
-    margin-right: $cabinet-space;
-    width: calc((100% - (#{$cabinet-space} * 2)) / 2);
+    margin-right: $cabinet-side-width;
+    width: calc((100% - (#{$cabinet-side-width} * 2)) / 2);
 }
 
 footer {
-    margin-left: $cabinet-space;
-    width: calc(100% - #{$cabinet-space});
+    margin-left: $cabinet-side-width;
+    width: calc(100% - #{$cabinet-side-width});
 }
 
 
 
 // Temporary - because svg too big
 svg {
-    width: 50px;
-    height: 50px;
+    width: 1em;
+    height: 1em;
 }
