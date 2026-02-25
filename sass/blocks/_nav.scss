@@ -1,7 +1,7 @@
 nav {
     ul {
         li {
-            transform: rotate(-35deg);
+            transform: rotate(-40deg);
             font-size: small;
             a {
                 text-decoration: none;
@@ -15,6 +15,5 @@ nav {
     }
     
     padding: 15px;
-    background-color: red;
-    clip-path: polygon(0% 100%, 15% 0%, 100% 0%, 85% 100%);
+    background-color: $color-primary;
 }

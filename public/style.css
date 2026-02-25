@@ -90,6 +90,7 @@ header {
 
 nav {
   width: 100%;
+  clip-path: polygon(0% 100%, 100px 0%, 100% 0%, calc(100% - 100px) 100%);
 }
 
 main {
@@ -119,8 +120,7 @@ svg {
 
 nav {
   padding: 15px;
-  background-color: red;
-  clip-path: polygon(0% 100%, 15% 0%, 100% 0%, 85% 100%);
+  background-color: #526cff;
 }
 nav ul {
   display: flex;
@@ -128,7 +128,7 @@ nav ul {
   list-style: none;
 }
 nav ul li {
-  transform: rotate(-35deg);
+  transform: rotate(-40deg);
   font-size: small;
 }
 nav ul li a {

@@ -15,6 +15,7 @@ nav {
     // margin-right: $cabinet-space;
     // width: calc(100% - #{$cabinet-space});
     width: 100%;
+    clip-path: polygon(0% 100%, $cabinet-space 0%, 100% 0%, calc(100% - #{$cabinet-space}) 100%);
 }
 
 main {
