@@ -1,0 +1,20 @@
+nav {
+    ul {
+        li {
+            transform: rotate(-55deg);
+            font-size: small;
+            padding-bottom: 15px;
+            a {
+                text-decoration: none;
+                color: $color-primary-alt;
+            }
+        }
+
+        display: flex;
+        justify-content: space-evenly;
+        list-style: none;
+    }
+    
+    padding: 25px;
+    background-color: $color-background;
+}

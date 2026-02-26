@@ -104,9 +104,8 @@ header {
 }
 
 nav {
-  margin-left: 100px;
-  margin-right: 100px;
-  width: calc(100% - 100px);
+  width: 100%;
+  clip-path: polygon(0% 100%, 100px 0%, 100% 0%, calc(100% - 100px) 100%);
 }
 
 main {
@@ -213,4 +212,23 @@ header .link-github svg {
 }
 header .link-github svg path {
   fill: currentColor;
+}
+
+nav {
+  padding: 25px;
+  background-color: #131311;
+}
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+}
+nav ul li {
+  transform: rotate(-55deg);
+  font-size: small;
+  padding-bottom: 15px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #D9B036;
 }

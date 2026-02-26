@@ -15,9 +15,8 @@ header {
 }
 
 nav {
-    margin-left: $cabinet-side-width;
-    margin-right: $cabinet-side-width;
-    width: calc(100% - #{$cabinet-side-width});
+    width: 100%;
+    clip-path: polygon(0% 100%, $cabinet-side-width 0%, 100% 0%, calc(100% - #{$cabinet-side-width}) 100%);
 }
 
 main {
