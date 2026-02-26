@@ -215,8 +215,8 @@ header .link-github svg path {
 }
 
 nav {
-  padding: 15px;
-  background-color: #526cff;
+  padding: 25px;
+  background-color: #131311;
 }
 nav ul {
   display: flex;
@@ -224,10 +224,11 @@ nav ul {
   list-style: none;
 }
 nav ul li {
-  transform: rotate(-40deg);
+  transform: rotate(-55deg);
   font-size: small;
+  padding-bottom: 15px;
 }
 nav ul li a {
   text-decoration: none;
-  color: black;
+  color: #D9B036;
 }

@@ -1,11 +1,12 @@
 nav {
     ul {
         li {
-            transform: rotate(-40deg);
+            transform: rotate(-55deg);
             font-size: small;
+            padding-bottom: 15px;
             a {
                 text-decoration: none;
-                color: black;
+                color: $color-primary-alt;
             }
         }
 
@@ -14,6 +15,6 @@ nav {
         list-style: none;
     }
     
-    padding: 15px;
-    background-color: $color-primary;
+    padding: 25px;
+    background-color: $color-background;
 }
