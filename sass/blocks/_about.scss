@@ -1,0 +1,92 @@
+// Three-image row
+$about-image-row-height: 180px;
+
+@mixin about-image-row {
+  content: "";
+  display: block;
+  width: 100%;
+  margin-top: 1.5rem;
+  height: $about-image-row-height;
+  background-image:
+    url("images/temp_arcade_image.png"),
+    url("images/temp_arcade_image.png"),
+    url("images/temp_arcade_image.png");
+  background-size: unquote('min(16%, #{$about-image-row-height})') auto;
+  background-position: calc(100% / 6) 50%, 50% 50%, calc(100% * 5 / 6) 50%;
+  background-repeat: no-repeat;
+}
+
+@keyframes arcade-nudge {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-4px); }
+}
+
+#about {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  .container:nth-child(1) {
+    padding: 1rem;
+  }
+  
+  .container:nth-child(2) {
+    padding: 1rem;
+  
+    ul {
+      list-style: none;
+      padding-left: 1.5rem;
+    }
+  
+    li::before {
+      content: "▶";
+      margin-right: 0.75rem;
+      display: inline-block;
+      animation: arcade-nudge 3s steps(1) infinite;
+    }
+  }
+
+  .container:last-of-type::after {
+    @include about-image-row;
+  }
+
+  blockquote {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &::before {
+      flex: 1;
+      content: "";
+      background-image: url("images/temp_arcade_image.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      aspect-ratio: 1 / 1;
+    }
+
+    & > * {
+      flex: 2;
+    }
+  }
+}
+
+@media (min-width: 48em) {
+  #about {
+    grid-template-columns: repeat(2, 1fr);
+
+    .container:last-of-type::after {
+      content: none;
+      display: none;
+      height: 0;
+      margin: 0;
+      background: none;
+    }
+
+    &::after {
+      @include about-image-row;
+      grid-column: 1 / -1;
+    }
+  }
+}

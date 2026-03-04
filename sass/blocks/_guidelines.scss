@@ -1,0 +1,28 @@
+#guidelines {
+  padding: 1rem;
+}
+
+.link-guidelines {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: none;
+
+  color: $arcade-yellow;
+  border: 3px solid $arcade-blue;
+  text-shadow: 0 0 4px $arcade-yellow;
+  box-shadow: 4px 4px 0 $arcade-blue;
+
+  &:hover,
+  &:focus {
+    color: $arcade-green;
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 $arcade-blue;
+  }
+
+  &:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+  }
+}

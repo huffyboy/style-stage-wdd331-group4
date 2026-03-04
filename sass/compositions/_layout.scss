@@ -4,15 +4,14 @@ $cabinet-edge-margin: 1.5rem;
 $cabinet-side-width: 100px;
 
 body {
-    display: flex;
-    flex-wrap: wrap;
-    padding: $cabinet-edge-margin;
-}
+  display: flex;
+  flex-wrap: wrap;
+  padding: $cabinet-edge-margin;
 
-header {
+  > header {
     margin-left: $cabinet-side-width;
     width: calc(100% - #{$cabinet-side-width});
-}
+  }
 
 nav {
     width: 100%;
@@ -52,12 +51,11 @@ aside {
 .page-footer {
     margin-left: $cabinet-side-width;
     width: calc(100% - #{$cabinet-side-width});
+  }
 }
-
-
 
 // Temporary - because svg too big
 svg {
-    width: 1em;
-    height: 1em;
+  width: 1em;
+  height: 1em;
 }
