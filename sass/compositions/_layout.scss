@@ -15,9 +15,8 @@ header {
 }
 
 nav {
-    margin-left: $cabinet-side-width;
-    margin-right: $cabinet-side-width;
-    width: calc(100% - #{$cabinet-side-width});
+    width: 100%;
+    clip-path: polygon(0% 100%, $cabinet-side-width 0%, 100% 0%, calc(100% - #{$cabinet-side-width}) 100%);
 }
 
 main {
@@ -25,17 +24,32 @@ main {
     width: calc(100% - #{$cabinet-side-width});
 }
 
-aside.profile {
-    margin-left: $cabinet-side-width;
-    width: calc((100% - (#{$cabinet-side-width} * 2)) / 2);
+main footer {
+    clip-path: polygon(0% 100%, $cabinet-side-width 0%, 100% 0%, calc(100% - #{$cabinet-side-width}) 100%);
+    background-color: white;
 }
 
-aside#styles {
-    margin-right: $cabinet-side-width;
-    width: calc((100% - (#{$cabinet-side-width} * 2)) / 2);
+// aside.profile {
+//     // margin-left: $cabinet-side-width;
+//     width: 50%;
+//     clip-path: polygon(0% 100%, $cabinet-side-width 0%, 100% 0%, calc(100% - #{$cabinet-side-width}) 100%);
+//     background-color: white;
+// }
+
+// aside#styles {
+//     // margin-right: $cabinet-side-width;
+//     width: 50%;
+//     clip-path: polygon(0% 100%, $cabinet-side-width 0%, 100% 0%, calc(100% - #{$cabinet-side-width}) 100%);
+//     background-color: white;
+// }
+aside {
+    background-color: white;
+    width: 50%;
+    margin: 0;
+    clip-path: polygon(0% 100%, $cabinet-side-width 0%, 100% 0%, calc(100% - #{$cabinet-side-width}) 100%);
 }
 
-footer {
+.page-footer {
     margin-left: $cabinet-side-width;
     width: calc(100% - #{$cabinet-side-width});
 }
