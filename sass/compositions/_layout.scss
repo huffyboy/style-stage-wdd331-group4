@@ -4,46 +4,43 @@ $cabinet-edge-margin: 1.5rem;
 $cabinet-side-width: 100px;
 
 body {
-    display: flex;
-    flex-wrap: wrap;
-    padding: $cabinet-edge-margin;
-}
+  display: flex;
+  flex-wrap: wrap;
+  padding: $cabinet-edge-margin;
 
-header {
+  > header {
     margin-left: $cabinet-side-width;
     width: calc(100% - #{$cabinet-side-width});
-}
+  }
 
-nav {
-    margin-left: $cabinet-side-width;
+  > nav {
+    width: 100%;
+    clip-path: polygon(0% 100%, $cabinet-side-width 0%, 100% 0%, calc(100% - #{$cabinet-side-width}) 100%);
+  }
+
+  > main {
     margin-right: $cabinet-side-width;
     width: calc(100% - #{$cabinet-side-width});
-}
+  }
 
-main {
-    margin-right: $cabinet-side-width;
-    width: calc(100% - #{$cabinet-side-width});
-}
-
-aside.profile {
+  > aside.profile {
     margin-left: $cabinet-side-width;
     width: calc((100% - (#{$cabinet-side-width} * 2)) / 2);
-}
+  }
 
-aside#styles {
+  > aside#styles {
     margin-right: $cabinet-side-width;
     width: calc((100% - (#{$cabinet-side-width} * 2)) / 2);
-}
+  }
 
-footer {
+  > footer.page-footer {
     margin-left: $cabinet-side-width;
     width: calc(100% - #{$cabinet-side-width});
+  }
 }
-
-
 
 // Temporary - because svg too big
 svg {
-    width: 1em;
-    height: 1em;
+  width: 1em;
+  height: 1em;
 }
