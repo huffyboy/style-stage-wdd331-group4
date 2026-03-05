@@ -1,13 +1,11 @@
 #main .container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
 
 main {
-  background-color: black;
   color: white;
-  border: 10px solid $color-background;
+  background-color: transparent;
 
   a {
     color: $arcade-blue;
@@ -26,4 +24,30 @@ main {
   li {
     color: $arcade-yellow;
   }
+}
+
+main footer {
+    background-color: $color-background;
+}
+
+#about, #guidelines, #contribute > section {
+  background-color: $color-background;
+}
+
+#contribute > section {
+  padding: $cabinet-edge-margin;
+  border: 10px solid $color-background;
+}
+
+#contribute {
+  background: none;
+  padding: 0 !important;
+}
+
+#files .container {
+  display: grid;
+  padding: 10px;
+  margin: 0 10px;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
 }

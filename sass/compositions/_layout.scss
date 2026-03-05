@@ -6,34 +6,39 @@ $cabinet-side-width: 100px;
 body {
   display: flex;
   flex-wrap: wrap;
-  padding: $cabinet-edge-margin;
+  margin: $cabinet-edge-margin;
 
   > header {
     margin-left: $cabinet-side-width;
     width: calc(100% - #{$cabinet-side-width});
   }
 
-  > nav {
+nav {
     width: 100%;
     clip-path: polygon(0% 100%, $cabinet-side-width 0%, 100% 0%, calc(100% - #{$cabinet-side-width}) 100%);
-  }
+}
 
-  > main {
-    margin-right: $cabinet-side-width;
+#about, #guidelines, #contribute > section {
     width: calc(100% - #{$cabinet-side-width});
-  }
+}
 
-  > aside.profile {
-    margin-left: $cabinet-side-width;
-    width: calc((100% - (#{$cabinet-side-width} * 2)) / 2);
-  }
+main footer {
+  margin-right: 0;  
+  clip-path: polygon(0% 0%, calc(#{$cabinet-side-width} / 6) 100%, calc(100% - (#{$cabinet-side-width} / 1.2)) 100%, calc(100% - #{$cabinet-side-width}) 0%);
+}
 
-  > aside#styles {
-    margin-right: $cabinet-side-width;
-    width: calc((100% - (#{$cabinet-side-width} * 2)) / 2);
-  }
+aside {
+    width: 50%;
+    margin: 0;
+    &.profile {
+      clip-path: polygon(calc(#{$cabinet-side-width} / 6) 0%, $cabinet-side-width 100%, 100% 100%, 100% 0%);
+    }
+    &#styles {
+      clip-path: polygon(0 0%, 0% 100%, 100% 100%, calc(100% - (#{$cabinet-side-width} / 1.2)) 0%);
+    }
+}
 
-  > footer.page-footer {
+footer.page-footer {
     margin-left: $cabinet-side-width;
     width: calc(100% - #{$cabinet-side-width});
   }

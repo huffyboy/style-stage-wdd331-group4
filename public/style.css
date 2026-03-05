@@ -96,29 +96,34 @@ body {
 body {
   display: flex;
   flex-wrap: wrap;
-  padding: 1.5rem;
+  margin: 1.5rem;
 }
 body > header {
   margin-left: 100px;
   width: calc(100% - 100px);
 }
-body > nav {
+body nav {
   width: 100%;
   clip-path: polygon(0% 100%, 100px 0%, 100% 0%, calc(100% - 100px) 100%);
 }
-body > main {
-  margin-right: 100px;
+body #about, body #guidelines, body #contribute > section {
   width: calc(100% - 100px);
 }
-body > aside.profile {
-  margin-left: 100px;
-  width: calc((100% - (100px * 2)) / 2);
+body main footer {
+  margin-right: 0;
+  clip-path: polygon(0% 0%, calc(100px / 6) 100%, calc(100% - (100px / 1.2)) 100%, calc(100% - 100px) 0%);
 }
-body > aside#styles {
-  margin-right: 100px;
-  width: calc((100% - (100px * 2)) / 2);
+body aside {
+  width: 50%;
+  margin: 0;
 }
-body > footer.page-footer {
+body aside.profile {
+  clip-path: polygon(calc(100px / 6) 0%, 100px 100%, 100% 100%, 100% 0%);
+}
+body aside#styles {
+  clip-path: polygon(0 0%, 0% 100%, 100% 100%, calc(100% - (100px / 1.2)) 0%);
+}
+body footer.page-footer {
   margin-left: 100px;
   width: calc(100% - 100px);
 }
@@ -231,13 +236,11 @@ nav ul li a {
 #main .container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
 
 main {
-  background-color: black;
   color: white;
-  border: 10px solid #131311;
+  background-color: transparent;
 }
 main a {
   color: #00ffff;
@@ -254,6 +257,32 @@ main h3 {
 }
 main li {
   color: #ffff00;
+}
+
+main footer {
+  background-color: #131311;
+}
+
+#about, #guidelines, #contribute > section {
+  background-color: #131311;
+}
+
+#contribute > section {
+  padding: 1.5rem;
+  border: 10px solid #131311;
+}
+
+#contribute {
+  background: none;
+  padding: 0 !important;
+}
+
+#files .container {
+  display: grid;
+  padding: 10px;
+  margin: 0 10px;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
 }
 
 @keyframes arcade-nudge {
@@ -366,4 +395,69 @@ main li {
 
 #contribute {
   padding: 1rem;
+}
+
+aside {
+  background-color: #131311;
+  width: 50%;
+  margin: 0;
+  text-align: center;
+}
+
+aside.profile h4 {
+  color: #ffff00;
+}
+
+aside.profile > .container > ul {
+  background-color: #ff1717;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 40px;
+}
+
+aside.profile, aside#styles {
+  padding: 15px 0;
+}
+
+aside#styles > .container {
+  max-width: 510px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+aside#styles > .container > h2, aside#styles > .container > a {
+  border: #131311 solid 2px;
+  border-radius: 15px;
+  background-color: #ff1717;
+  padding: 10px;
+}
+
+aside#styles > .container > ul.features {
+  display: grid;
+  max-width: 550px;
+  grid-template-columns: 1fr 1fr;
+  font-size: 15px;
+  gap: 3px;
+  padding-inline-start: 0;
+}
+
+aside#styles li {
+  border-radius: 15px;
+  border: #131311 solid 2px;
+  max-width: 250px;
+  height: 75px;
+  background-color: #17e617;
+}
+
+aside li {
+  list-style: none;
 }
