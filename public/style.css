@@ -4,10 +4,11 @@
   --color-primary: #526cff;
   --color-primary-alt: #D9B036;
   --color-secondary: #d92B2B;
-  --color-background: #131311;
+  --color-background: #282626;
   --color-text: #3b4db1;
   --color-light: #D9CD2B;
   --color-anchor: #526cff;
+  --color-arcade-black: #000000;
   --font-family: "Press Start 2P", monospace;
   --font-family-heading: "Orbitron", sans-serif;
   --font-weight-strong: 500;
@@ -16,6 +17,7 @@
   --font-size-h3: 2rem;
   --font-size-h4: 1.35rem;
   --font-size-text: 1.15rem;
+  --font-size-small: 0.75rem;
   --border-radius: 8px;
 }
 
@@ -89,45 +91,92 @@ h4 {
 }
 
 body {
-  background-color: #D9B036;
-  color: #131311;
+  color: #282626;
+  background-color: #282626;
 }
 
+@media (min-width: 480px) {
+  body {
+    background-color: #282626;
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    background-color: #D9B036;
+  }
+}
 body {
   display: flex;
   flex-wrap: wrap;
-  margin: 1.5rem;
+  margin: 0;
 }
 body > header {
-  margin-left: 100px;
-  width: calc(100% - 100px);
+  width: 100%;
+  margin-left: 0;
 }
 body nav {
   width: 100%;
-  clip-path: polygon(0% 100%, 100px 0%, 100% 0%, calc(100% - 100px) 100%);
 }
 body #about, body #guidelines, body #contribute > section {
-  width: calc(100% - 100px);
+  width: 100%;
 }
 body main footer {
   margin-right: 0;
-  clip-path: polygon(0% 0%, calc(100px / 6) 100%, calc(100% - (100px / 1.2)) 100%, calc(100% - 100px) 0%);
 }
 body aside {
-  width: 50%;
+  width: 100%;
   margin: 0;
 }
 body aside.profile {
-  clip-path: polygon(calc(100px / 6) 0%, 100px 100%, 100% 100%, 100% 0%);
+  clip-path: none;
 }
 body aside#styles {
-  clip-path: polygon(0 0%, 0% 100%, 100% 100%, calc(100% - (100px / 1.2)) 0%);
+  clip-path: none;
 }
 body footer.page-footer {
-  margin-left: 100px;
-  width: calc(100% - 100px);
+  width: 100%;
+  margin-left: 0;
 }
 
+@media (min-width: 480px) {
+  body {
+    margin: 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    margin: 1.5rem;
+  }
+  body > header {
+    margin-left: 100px;
+    width: calc(100% - 100px);
+  }
+  body nav {
+    width: 100%;
+    clip-path: polygon(0% 100%, 100px 0%, 100% 0%, calc(100% - 100px) 100%);
+  }
+  body #about, body #guidelines, body #contribute > section {
+    width: calc(100% - 100px);
+  }
+  body main footer {
+    margin-right: 0;
+    clip-path: polygon(0% 0%, calc(100px / 6) 100%, calc(100% - (100px / 1.2)) 100%, calc(100% - 100px) 0%);
+  }
+  body aside {
+    width: 50%;
+    margin: 0;
+  }
+  body aside.profile {
+    clip-path: polygon(calc(100px / 6) 0%, 100px 100%, 100% 100%, 100% 0%);
+  }
+  body aside#styles {
+    clip-path: polygon(0 0%, 0% 100%, 100% 100%, calc(100% - (100px / 1.2)) 0%);
+  }
+  body footer.page-footer {
+    margin-left: 100px;
+    width: calc(100% - 100px);
+  }
+}
 svg {
   width: 1em;
   height: 1em;
@@ -135,7 +184,7 @@ svg {
 
 .skip-link {
   position: fixed;
-  top: -3em;
+  top: -100px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 9999;
@@ -150,11 +199,15 @@ svg {
 }
 
 header {
-  padding: 1.5rem;
-  border: 0.5rem solid;
-  border-radius: 4px;
+  padding: 0.75rem 0.25rem;
+  border: none;
   text-align: left;
   background-color: var(--color-primary);
+}
+@media (max-width: 479px) {
+  header {
+    overflow-x: hidden;
+  }
 }
 header .container {
   display: flex;
@@ -162,6 +215,14 @@ header .container {
   justify-content: center;
   width: 100%;
   max-width: 100%;
+}
+header h2 {
+  font-size: clamp(0.875rem, 4vw, 1.5rem);
+  line-height: 1.3;
+  margin-top: 0.5rem;
+}
+header p {
+  font-size: clamp(var(--font-size-small), 2vw, 1rem);
 }
 header a:not(.link-github) {
   transition: color 0.2s ease, text-decoration-color 0.2s ease;
@@ -172,10 +233,10 @@ header a:not(.link-github):hover, header a:not(.link-github):focus {
 }
 header h1 {
   display: block;
-  margin-right: auto;
-  margin-left: auto;
-  padding-bottom: 0.15em;
-  font-size: clamp(2.75rem, 14vw, 8rem);
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+  white-space: nowrap;
+  font-size: clamp(1.25rem, 13vw, 2.75rem);
   font-weight: 700;
   font-style: italic;
   line-height: 1.15;
@@ -184,24 +245,41 @@ header h1 {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 4px black;
+  -webkit-text-stroke: 2px black;
 }
 header .link-github {
   display: inline-flex;
   align-items: center;
   align-self: flex-end;
   gap: 0.35em;
-  padding: 0.5rem 0.75rem;
+  padding: 0.35rem 0.5rem;
   border-radius: 9999px;
   background: var(--color-primary-alt);
   color: var(--color-primary);
   text-decoration: none;
-  font-size: var(--font-size-text);
+  font-size: clamp(0.65rem, 2.5vw, 0.9rem);
+  line-height: 1;
   transition: color 0.2s ease, background-color 0.2s ease;
+}
+@media (max-width: 479px) and (prefers-reduced-motion: no-preference) {
+  header .link-github {
+    transform: translateX(65%);
+    transition: transform 0.25s ease, color 0.2s ease, background-color 0.2s ease;
+  }
 }
 header .link-github:hover, header .link-github:focus {
   color: var(--color-background);
   background: color-mix(in srgb, var(--color-primary-alt) 85%, var(--color-background));
+}
+@media (max-width: 479px) and (prefers-reduced-motion: no-preference) {
+  header .link-github:hover, header .link-github:focus {
+    transform: translateX(5%);
+  }
+}
+@media (max-width: 479px) and (prefers-reduced-motion: reduce) {
+  header .link-github {
+    transform: none;
+  }
 }
 header .link-github svg {
   display: block;
@@ -214,25 +292,86 @@ header .link-github svg path {
   fill: currentColor;
 }
 
+@media (min-width: 480px) {
+  header {
+    padding: 1.25rem;
+    border: none;
+    overflow-x: visible;
+  }
+  header .link-github {
+    transform: none;
+    padding: 0.45rem 0.6rem;
+    font-size: 0.9rem;
+  }
+  header h1 {
+    white-space: normal;
+    font-size: clamp(2rem, 10vw, 4rem);
+    padding-bottom: 0.15em;
+    -webkit-text-stroke: 3px black;
+  }
+  header h2 {
+    font-size: clamp(1rem, 5vw, 2rem);
+    margin-top: 0.75rem;
+  }
+  header p {
+    font-size: var(--font-size-small);
+  }
+}
+@media (min-width: 1024px) {
+  header {
+    padding: 1.5rem;
+    border: 0.5rem solid #282626;
+    overflow-x: visible;
+  }
+  header .link-github {
+    transform: none;
+    padding: 0.5rem 0.75rem;
+    font-size: var(--font-size-text);
+  }
+  header h1 {
+    white-space: normal;
+    font-size: clamp(2.75rem, 14vw, 8rem);
+    padding-bottom: 0.15em;
+    -webkit-text-stroke: 4px black;
+  }
+  header h2 {
+    font-size: clamp(1.25rem, 6vw, 3rem);
+    margin-top: 1rem;
+  }
+  header p {
+    font-size: var(--font-size-small);
+  }
+}
 nav {
-  padding: 25px;
-  background-color: #131311;
-}
-nav ul {
-  display: flex;
-  justify-content: space-evenly;
-  list-style: none;
-}
-nav ul li {
-  transform: rotate(-55deg);
-  font-size: small;
-  padding-bottom: 15px;
-}
-nav ul li a {
-  text-decoration: none;
-  color: #D9B036;
+  display: none;
 }
 
+@media (min-width: 480px) {
+  nav {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  nav {
+    display: block;
+    padding: 25px;
+    background-color: #282626;
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+  }
+  nav ul li {
+    transform: rotate(-55deg);
+    font-size: small;
+    padding-bottom: 15px;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #D9B036;
+  }
+}
 #main .container {
   display: flex;
   flex-direction: column;
@@ -260,16 +399,16 @@ main li {
 }
 
 main footer {
-  background-color: #131311;
+  background-color: #282626;
 }
 
 #about, #guidelines, #contribute > section {
-  background-color: #131311;
+  background-color: #000000;
 }
 
 #contribute > section {
   padding: 1.5rem;
-  border: 10px solid #131311;
+  border: 10px solid #282626;
 }
 
 #contribute {
@@ -398,7 +537,7 @@ main footer {
 }
 
 aside {
-  background-color: #131311;
+  background-color: #282626;
   width: 50%;
   margin: 0;
   text-align: center;
@@ -435,7 +574,7 @@ aside#styles > .container {
 }
 
 aside#styles > .container > h2, aside#styles > .container > a {
-  border: #131311 solid 2px;
+  border: #282626 solid 2px;
   border-radius: 15px;
   background-color: #ff1717;
   padding: 10px;
@@ -452,7 +591,7 @@ aside#styles > .container > ul.features {
 
 aside#styles li {
   border-radius: 15px;
-  border: #131311 solid 2px;
+  border: #282626 solid 2px;
   max-width: 250px;
   height: 75px;
   background-color: #17e617;

@@ -1,13 +1,18 @@
+// Breakpoints (design tokens) — small < 480px, medium 480–1023px, wide 1024px+
+$bp-medium: 480px;
+$bp-wide: 1024px;
+
 $color-primary: #526cff;
 $color-primary-alt: #D9B036;
 $color-secondary: #d92B2B;
-$color-background: #131311;
+$color-background: #282626;
 
 // Arcade screen palette
 $arcade-yellow: #ffff00;
 $arcade-blue: #00ffff;
 $arcade-green: #17e617;
 $arcade-red: #ff1717;
+$arcade-black: #000000;
 
 $brand-colors: (
   primary: $color-primary,
@@ -48,6 +53,7 @@ $font-size-h2: 3rem;
 $font-size-h3: 2rem;
 $font-size-h4: 1.35rem;
 $font-size-text: 1.15rem;
+$font-size-small: 0.75rem;
 
 $font-sizes: (
   h1: $font-size-h1,
@@ -55,6 +61,7 @@ $font-sizes: (
   h3: $font-size-h3,
   h4: $font-size-h4,
   text: $font-size-text,
+  small: $font-size-small,
 );
 
 // stylelint-disable
@@ -64,6 +71,7 @@ $font-sizes: (
   }
 
   --color-anchor: #{$link-color};
+  --color-arcade-black: #{$arcade-black};
   --font-family: "Press Start 2P", monospace;
   --font-family-heading: "Orbitron", sans-serif;
   --font-weight-strong: #{$font-weight-strong};
