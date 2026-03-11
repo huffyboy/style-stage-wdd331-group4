@@ -1,24 +1,84 @@
+
+//set breakpoint sizes
+$break-small: 460px;
+$break-medium: 1020px;
+$break-large: 2000px;
+
+@mixin breakpoint($break) {
+@if $break == large {
+@media (max-width: $break-large) { @content; }
+}
+@else if $break == medium {
+@media (max-width: $break-medium) { @content; }
+}
+@else if $break == small {
+@media (max-width: $break-small) { @content; }
+} @else {
+@media ($break) { @content; }
+}
+}
 // Footer grid layout with 4 columns
-
-@mixin 
-
+              
 footer {
+  @include breakpoint(large) {
+    margin-top:  0;
+    padding-top: 0;
+    color:#fff;
+    background-color: $color-background;
+  }
+  @include breakpoint(medium) {
+    background-color: $color-background;
+    color: $arcade-green;
+  }
+  div {
+    padding: 2em;
+    width: 100%;
+  }
   ul {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    li {
+    @include breakpoint(large) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: --color-background;
+    }
+    @include breakpoint(medium) {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      gap: 2rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+
+    li { 
+      text-decoration: none;
+      @include breakpoint(medium) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    }
+    li::before {
+      @include breakpoint(medium) {
+      content: "▶";
+      margin-right: 0.75rem;
+      display: inline-block;
+      animation: arcade-nudge 3s steps(1) infinite;
+      }
     }
   }
   p {
-    text-align: center;
     margin-top: 2rem;
   }
+  a {
+      list-style-type: none;
+      text-decoration: none;
+      color: inherit;
+    
+  }
 }
+
