@@ -1,20 +1,37 @@
 nav {
-    ul {
-        li {
-            transform: rotate(-55deg);
-            font-size: small;
-            padding-bottom: 15px;
-            a {
-                text-decoration: none;
-                color: $color-primary-alt;
-            }
-        }
+  // Temporary
+  display: none;
+}
 
-        display: flex;
-        justify-content: space-evenly;
-        list-style: none;
-    }
-    
+// Medium: same as small — keep nav hidden?
+@media (min-width: $bp-medium) {
+  nav {
+    display: none;
+  }
+}
+
+// Wide: default nav styling
+@media (min-width: $bp-wide) {
+  nav {
+    display: block;
     padding: 25px;
     background-color: $color-background;
+
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+      list-style: none;
+
+      li {
+        transform: rotate(-55deg);
+        font-size: small;
+        padding-bottom: 15px;
+
+        a {
+          text-decoration: none;
+          color: $color-primary-alt;
+        }
+      }
+    }
+  }
 }

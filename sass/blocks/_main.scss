@@ -1,11 +1,17 @@
 #main .container {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
 }
 
 main {
   color: white;
   background-color: transparent;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
 
   a {
     color: $arcade-blue;
@@ -31,8 +37,12 @@ main footer {
 }
 
 #about, #guidelines, #contribute > section {
-  background-color: $color-background;
+  background-color: $arcade-black;
+  min-width: 0;
+  max-width: 100%;
 }
+
+// #contribute: responsive styles out of scope for main-section pass; left as-is
 
 #contribute > section {
   padding: $cabinet-edge-margin;
