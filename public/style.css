@@ -113,15 +113,39 @@ body main footer {
   margin-right: 0;
   clip-path: polygon(0% 0%, calc(100px / 6) 100%, calc(100% - (100px / 1.2)) 100%, calc(100% - 100px) 0%);
 }
+@media (max-width: 460px) {
+  body main footer {
+    clip-path: none;
+  }
+}
 body aside {
-  width: 50%;
   margin: 0;
 }
 body aside.profile {
   clip-path: polygon(calc(100px / 6) 0%, 100px 100%, 100% 100%, 100% 0%);
 }
+@media (max-width: 460px) {
+  body aside.profile {
+    clip-path: none;
+  }
+}
+@media (max-width: 1020px) {
+  body aside.profile {
+    clip-path: polygon(calc(100px / 6) 0%, calc(100px / 2) 100%, calc(100% - (100px / 2.5)) 100%, calc(100% - (100px / 1.2)) 0%);
+  }
+}
 body aside#styles {
   clip-path: polygon(0 0%, 0% 100%, 100% 100%, calc(100% - (100px / 1.2)) 0%);
+}
+@media (max-width: 460px) {
+  body aside#styles {
+    clip-path: none;
+  }
+}
+@media (max-width: 1020px) {
+  body aside#styles {
+    clip-path: polygon(calc(100px / 2) 0%, 100px 100%, 100% 100%, calc(100% - (100px / 2.5)) 0%);
+  }
 }
 body footer.page-footer {
   margin-left: 100px;
@@ -232,7 +256,32 @@ nav ul li a {
   text-decoration: none;
   color: #D9B036;
 }
+@media (max-width: 700px) {
+  nav ul li {
+    font-size: 5px;
+    transform: rotate(-40deg);
+  }
+}
+@media (max-width: 460px) {
+  nav ul li {
+    transform: rotate(0deg);
+  }
+}
+@media (max-width: 700px) {
+  nav {
+    padding: 10px;
+  }
+}
 
+@media (max-width: 460px) {
+  nav {
+    text-align: center;
+  }
+  nav ul {
+    display: block;
+    margin: 0;
+  }
+}
 #main .container {
   display: flex;
   flex-direction: column;
@@ -283,6 +332,7 @@ main footer {
   margin: 0 10px;
   grid-template-columns: 1fr 1fr;
   place-items: center;
+  row-gap: 15px;
 }
 
 @keyframes arcade-nudge {
@@ -397,11 +447,94 @@ main footer {
   padding: 1rem;
 }
 
+@media (max-width: 2000px) {
+  footer {
+    margin-top: 0;
+    padding-top: 0;
+    color: #fff;
+    background-color: #131311;
+  }
+}
+@media (max-width: 1020px) {
+  footer {
+    background-color: #131311;
+    color: #17e617;
+  }
+}
+footer div {
+  padding: 2em;
+  width: 100%;
+}
+@media (max-width: 2000px) {
+  footer ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: --color-background;
+  }
+}
+@media (max-width: 1020px) {
+  footer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+footer ul li {
+  text-decoration: none;
+}
+@media (max-width: 1020px) {
+  footer ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 1020px) {
+  footer ul li::before {
+    content: "▶";
+    margin-right: 0.75rem;
+    display: inline-block;
+    animation: arcade-nudge 3s steps(1) infinite;
+  }
+}
+footer p {
+  margin-top: 2rem;
+}
+footer a {
+  list-style-type: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 1020px) {
+  #files .container {
+    display: flex;
+    margin: 0 -50px;
+  }
+}
+
 aside {
   background-color: #131311;
   width: 50%;
   margin: 0;
   text-align: center;
+}
+@media (max-width: 460px) {
+  aside {
+    width: 100%;
+  }
+}
+@media (max-width: 1020px) {
+  aside {
+    width: 100%;
+  }
 }
 
 aside.profile h4 {
@@ -433,6 +566,18 @@ aside#styles > .container {
   flex-direction: column;
   align-items: center;
 }
+@media (max-width: 460px) {
+  aside#styles > .container {
+    display: block;
+    height: auto;
+  }
+}
+@media (max-width: 1020px) {
+  aside#styles > .container {
+    height: auto;
+    margin-left: 150px;
+  }
+}
 
 aside#styles > .container > h2, aside#styles > .container > a {
   border: #131311 solid 2px;
@@ -449,6 +594,22 @@ aside#styles > .container > ul.features {
   gap: 3px;
   padding-inline-start: 0;
 }
+@media (max-width: 460px) {
+  aside#styles > .container > ul.features {
+    display: block;
+  }
+}
+@media (max-width: 1020px) {
+  aside#styles > .container > ul.features {
+    display: block;
+  }
+}
+@media (max-width: 1180px) {
+  aside#styles > .container > ul.features {
+    display: block;
+    font-size: small;
+  }
+}
 
 aside#styles li {
   border-radius: 15px;
@@ -456,6 +617,12 @@ aside#styles li {
   max-width: 250px;
   height: 75px;
   background-color: #17e617;
+  margin: 0 auto;
+}
+@media (max-width: 1180px) {
+  aside#styles li {
+    height: 50px;
+  }
 }
 
 aside li {

@@ -1,8 +1,41 @@
+//set breakpoint sizes
+$break-small: 460px;
+$break-medium: 1020px;
+$break-medlar: 1180px;
+
+
+@mixin breakpoint($break) {
+@if $break == medium {
+@media (max-width: $break-medium) { @content; }
+}
+@else if $break == small {
+@media (max-width: $break-small) { @content; }
+} @else if $break == medium-large {
+    @media (max-width: $break-medlar) { @content; }
+} @else {
+@media ($break) { @content; }
+}
+}
+
+#files .container {
+    @include breakpoint(medium) {
+        display: flex;
+        margin: 0 -50px;
+    }
+}
+
 aside {
     background-color: $color-background;
     width: 50%;
     margin: 0;
     text-align: center;
+
+    @include breakpoint(small) {
+        width: 100%;
+    }
+    @include breakpoint(medium) {
+        width: 100%;
+    }
 }
 
 aside.profile h4 {
@@ -35,6 +68,15 @@ aside#styles > .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include breakpoint(small) {
+        display: block;
+        height: auto;
+    }
+    @include breakpoint(medium) {
+        height: auto;
+        margin-left: 150px;
+    }
 }
 
 aside#styles > .container > h2, aside#styles > .container> a {
@@ -51,6 +93,17 @@ aside#styles > .container > ul.features {
     font-size: 15px;
     gap: 3px;
     padding-inline-start: 0;
+    
+    @include breakpoint(small) {
+        display: block;
+    }
+    @include breakpoint(medium) {
+        display: block;
+    }
+    @include breakpoint(medium-large) {
+        display: block;
+        font-size: small;
+    }
 }
 
 aside#styles li {
@@ -59,6 +112,10 @@ aside#styles li {
     max-width: 250px;
     height: 75px;
     background-color: $arcade-green;
+    margin: 0 auto;
+    @include breakpoint(medium-large) {
+        height: 50px;
+    }
 }
 
 aside li {
