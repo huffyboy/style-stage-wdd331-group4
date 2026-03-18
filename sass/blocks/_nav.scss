@@ -1,61 +1,45 @@
-//set breakpoint sizes
-$break-small: 460px;
-$break-medium: 700px;
-$break-large: 2000px;
-
-@mixin breakpoint($break) {
-@if $break == large {
-@media (max-width: $break-large) { @content; }
-}
-@else if $break == medium {
-@media (max-width: $break-medium) { @content; }
-}
-@else if $break == small {
-@media (max-width: $break-small) { @content; }
-} @else {
-@media ($break) { @content; }
-}
-}
-
 nav {
-    ul {
-        li {
-            transform: rotate(-55deg);
-            font-size: small;
-            padding-bottom: 15px;
-            a {
-                text-decoration: none;
-                color: $color-primary-alt;
-            }
-            @include breakpoint(medium) {
-                font-size: 5px;
-                transform: rotate(-40deg)
-            }
-            @include breakpoint(small) {
-                transform: rotate(0deg);
-            }
-        }
+  ul {
+    li {
+      transform: rotate(-55deg);
+      font-size: small;
+      padding-bottom: 15px;
 
-        display: flex;
-        justify-content: space-evenly;
-        list-style: none;
-    }
-    
-    padding: 25px;
-    background-color: $color-background;
-    
-    @include breakpoint(medium) {
-        padding: 10px;
+      a {
+        text-decoration: none;
+        color: $color-primary-alt;
+      }
+
+      @include breakpoint(medium) {
+        font-size: 5px;
+        transform: rotate(-40deg);
+      }
+
+      @include breakpoint(small) {
+        transform: rotate(0deg);
+      }
     }
 
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+  }
+
+  padding: 25px;
+  background-color: $color-background;
+
+  @include breakpoint(medium) {
+    padding: 10px;
+  }
 }
 
 @include breakpoint(small) {
-    nav {
-        ul {
-            display: block;
-            margin: 0;
-        }
-        text-align: center;
+  nav {
+    ul {
+      display: block;
+      margin: 0;
     }
+
+    text-align: center;
+  }
 }

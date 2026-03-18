@@ -1,22 +1,3 @@
-
-//set breakpoint sizes
-$break-small: 460px;
-$break-medium: 1020px;
-$break-large: 2000px;
-
-@mixin breakpoint($break) {
-@if $break == large {
-@media (max-width: $break-large) { @content; }
-}
-@else if $break == medium {
-@media (max-width: $break-medium) { @content; }
-}
-@else if $break == small {
-@media (max-width: $break-small) { @content; }
-} @else {
-@media ($break) { @content; }
-}
-}
 // Footer grid layout with 4 columns
               
 footer {

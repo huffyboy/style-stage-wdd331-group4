@@ -1,0 +1,29 @@
+// Shared max-width breakpoints (mobile-first: styles apply at or below this width)
+$bp-small: 460px;
+$bp-medium: 1020px;
+$bp-medium-large: 1180px;
+$bp-large: 2000px;
+
+@mixin breakpoint($break) {
+  @if $break == large {
+    @media (max-width: $bp-large) {
+      @content;
+    }
+  } @else if $break == medium-large {
+    @media (max-width: $bp-medium-large) {
+      @content;
+    }
+  } @else if $break == medium {
+    @media (max-width: $bp-medium) {
+      @content;
+    }
+  } @else if $break == small {
+    @media (max-width: $bp-small) {
+      @content;
+    }
+  } @else {
+    @media (#{$break}) {
+      @content;
+    }
+  }
+}
