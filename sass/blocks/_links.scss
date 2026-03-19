@@ -78,7 +78,7 @@ aside#styles > .container > ul.features {
     display: block;
   }
 
-  @include breakpoint(medium-large) {
+  @include breakpoint(medium) {
     display: block;
     font-size: small;
   }
@@ -92,7 +92,7 @@ aside#styles li {
   background-color: $arcade-green;
   margin: 0 auto;
 
-  @include breakpoint(medium-large) {
+  @include breakpoint(medium) {
     height: 50px;
   }
 }

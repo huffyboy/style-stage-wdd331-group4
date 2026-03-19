@@ -95,7 +95,7 @@ body {
   background-color: #282626;
 }
 
-@media (min-width: 1020px) {
+@media (min-width: 480px) {
   body {
     background-color: #282626;
   }
@@ -138,7 +138,7 @@ body footer.page-footer {
   margin-left: 0;
 }
 
-@media (min-width: 1020px) {
+@media (min-width: 480px) {
   body {
     margin: 1rem;
   }
@@ -200,7 +200,7 @@ header {
   text-align: left;
   background-color: var(--color-primary);
 }
-@media (max-width: 1019px) {
+@media (max-width: 479px) {
   header {
     overflow-x: hidden;
   }
@@ -257,7 +257,7 @@ header .link-github {
   line-height: 1;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
-@media (max-width: 1019px) and (prefers-reduced-motion: no-preference) {
+@media (max-width: 479px) and (prefers-reduced-motion: no-preference) {
   header .link-github {
     transform: translateX(65%);
     transition: transform 0.25s ease, color 0.2s ease, background-color 0.2s ease;
@@ -267,12 +267,12 @@ header .link-github:hover, header .link-github:focus {
   color: var(--color-background);
   background: color-mix(in srgb, var(--color-primary-alt) 85%, var(--color-background));
 }
-@media (max-width: 1019px) and (prefers-reduced-motion: no-preference) {
+@media (max-width: 479px) and (prefers-reduced-motion: no-preference) {
   header .link-github:hover, header .link-github:focus {
     transform: translateX(5%);
   }
 }
-@media (max-width: 1019px) and (prefers-reduced-motion: reduce) {
+@media (max-width: 479px) and (prefers-reduced-motion: reduce) {
   header .link-github {
     transform: none;
   }
@@ -288,7 +288,7 @@ header .link-github svg path {
   fill: currentColor;
 }
 
-@media (min-width: 1020px) {
+@media (min-width: 480px) {
   header {
     padding: 1.25rem;
     border: none;
@@ -434,7 +434,7 @@ main {
   overflow-wrap: break-word;
   word-break: break-word;
 }
-@media (min-width: 1020px) {
+@media (min-width: 480px) {
   main {
     border: 0.5rem solid #282626;
   }
@@ -565,7 +565,7 @@ main li {
   width: 100%;
 }
 
-@media (min-width: 1020px) {
+@media (min-width: 480px) {
   #about {
     gap: 1rem;
     padding: 0.75rem 0;
@@ -659,7 +659,7 @@ main li {
   box-shadow: none;
 }
 
-@media (min-width: 1020px) {
+@media (min-width: 480px) {
   #guidelines {
     padding: 1rem;
   }
@@ -741,7 +741,7 @@ main li {
   outline: 0;
 }
 
-@media (max-width: 2000px) {
+@media (min-width: 1024px) {
   .page-footer {
     margin-top: 0;
     padding-top: 0;
@@ -749,7 +749,7 @@ main li {
     background-color: #282626;
   }
 }
-@media (max-width: 1020px) {
+@media (max-width: calc(1024px - 1px)) {
   .page-footer {
     background-color: #282626;
     color: #17e617;
@@ -759,7 +759,7 @@ main li {
   padding: 2em;
   width: 100%;
 }
-@media (max-width: 2000px) {
+@media (min-width: 1024px) {
   .page-footer ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -770,7 +770,7 @@ main li {
     background-color: --color-background;
   }
 }
-@media (max-width: 1020px) {
+@media (max-width: calc(1024px - 1px)) {
   .page-footer ul {
     display: flex;
     flex-direction: column;
@@ -783,14 +783,14 @@ main li {
 .page-footer ul li {
   text-decoration: none;
 }
-@media (max-width: 1020px) {
+@media (max-width: calc(1024px - 1px)) {
   .page-footer ul li {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 }
-@media (max-width: 1020px) {
+@media (max-width: calc(1024px - 1px)) {
   .page-footer ul li::before {
     content: "▶";
     margin-right: 0.75rem;
@@ -813,12 +813,12 @@ aside {
   margin: 0;
   text-align: center;
 }
-@media (max-width: 460px) {
+@media (max-width: calc(480px - 1px)) {
   aside {
     width: 100%;
   }
 }
-@media (max-width: 1020px) {
+@media (max-width: calc(1024px - 1px)) {
   aside {
     width: 100%;
   }
@@ -854,13 +854,13 @@ aside#styles > .container {
   flex-direction: column;
   align-items: center;
 }
-@media (max-width: 460px) {
+@media (max-width: calc(480px - 1px)) {
   aside#styles > .container {
     display: block;
     height: auto;
   }
 }
-@media (max-width: 1020px) {
+@media (max-width: calc(1024px - 1px)) {
   aside#styles > .container {
     height: auto;
     margin-left: 150px;
@@ -883,17 +883,17 @@ aside#styles > .container > ul.features {
   gap: 3px;
   padding-inline-start: 0;
 }
-@media (max-width: 460px) {
+@media (max-width: calc(480px - 1px)) {
   aside#styles > .container > ul.features {
     display: block;
   }
 }
-@media (max-width: 1020px) {
+@media (max-width: calc(1024px - 1px)) {
   aside#styles > .container > ul.features {
     display: block;
   }
 }
-@media (max-width: 1180px) {
+@media (max-width: calc(1024px - 1px)) {
   aside#styles > .container > ul.features {
     display: block;
     font-size: small;
@@ -908,7 +908,7 @@ aside#styles li {
   background-color: #17e617;
   margin: 0 auto;
 }
-@media (max-width: 1180px) {
+@media (max-width: calc(1024px - 1px)) {
   aside#styles li {
     height: 50px;
   }

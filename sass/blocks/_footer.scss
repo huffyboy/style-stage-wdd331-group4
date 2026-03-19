@@ -1,7 +1,7 @@
 // Footer grid layout with 4 columns
 
 .page-footer {
-  @include breakpoint(large) {
+  @include breakpoint(wide) {
     margin-top:  0;
     padding-top: 0;
     color:#fff;
@@ -16,7 +16,7 @@
     width: 100%;
   }
   ul {
-    @include breakpoint(large) {
+    @include breakpoint(wide) {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
