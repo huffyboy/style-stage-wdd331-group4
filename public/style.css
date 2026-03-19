@@ -95,7 +95,7 @@ body {
   background-color: #282626;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 1020px) {
   body {
     background-color: #282626;
   }
@@ -138,7 +138,7 @@ body footer.page-footer {
   margin-left: 0;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 1020px) {
   body {
     margin: 1rem;
   }
@@ -204,7 +204,7 @@ header {
   text-align: left;
   background-color: var(--color-primary);
 }
-@media (max-width: 479px) {
+@media (max-width: 1019px) {
   header {
     overflow-x: hidden;
   }
@@ -261,7 +261,7 @@ header .link-github {
   line-height: 1;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
-@media (max-width: 479px) and (prefers-reduced-motion: no-preference) {
+@media (max-width: 1019px) and (prefers-reduced-motion: no-preference) {
   header .link-github {
     transform: translateX(65%);
     transition: transform 0.25s ease, color 0.2s ease, background-color 0.2s ease;
@@ -271,12 +271,12 @@ header .link-github:hover, header .link-github:focus {
   color: var(--color-background);
   background: color-mix(in srgb, var(--color-primary-alt) 85%, var(--color-background));
 }
-@media (max-width: 479px) and (prefers-reduced-motion: no-preference) {
+@media (max-width: 1019px) and (prefers-reduced-motion: no-preference) {
   header .link-github:hover, header .link-github:focus {
     transform: translateX(5%);
   }
 }
-@media (max-width: 479px) and (prefers-reduced-motion: reduce) {
+@media (max-width: 1019px) and (prefers-reduced-motion: reduce) {
   header .link-github {
     transform: none;
   }
@@ -292,7 +292,7 @@ header .link-github svg path {
   fill: currentColor;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 1020px) {
   header {
     padding: 1.25rem;
     border: none;
@@ -346,7 +346,7 @@ nav {
   display: none;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 1020px) {
   nav {
     display: none;
   }
@@ -430,6 +430,7 @@ main footer {
   margin: 0 10px;
   grid-template-columns: 1fr 1fr;
   place-items: center;
+  row-gap: 15px;
 }
 
 @keyframes arcade-nudge {
@@ -538,7 +539,7 @@ main footer {
   width: 100%;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 1020px) {
   #about {
     gap: 1rem;
     padding: 0.75rem 0;
@@ -632,7 +633,7 @@ main footer {
   box-shadow: none;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 1020px) {
   #guidelines {
     padding: 1rem;
   }
@@ -652,11 +653,94 @@ main footer {
   padding: 1rem;
 }
 
+@media (max-width: 2000px) {
+  footer {
+    margin-top: 0;
+    padding-top: 0;
+    color: #fff;
+    background-color: #282626;
+  }
+}
+@media (max-width: 1020px) {
+  footer {
+    background-color: #282626;
+    color: #17e617;
+  }
+}
+footer div {
+  padding: 2em;
+  width: 100%;
+}
+@media (max-width: 2000px) {
+  footer ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: --color-background;
+  }
+}
+@media (max-width: 1020px) {
+  footer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+footer ul li {
+  text-decoration: none;
+}
+@media (max-width: 1020px) {
+  footer ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 1020px) {
+  footer ul li::before {
+    content: "▶";
+    margin-right: 0.75rem;
+    display: inline-block;
+    animation: arcade-nudge 3s steps(1) infinite;
+  }
+}
+footer p {
+  margin-top: 2rem;
+}
+footer a {
+  list-style-type: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 1020px) {
+  #files .container {
+    display: flex;
+    margin: 0 -50px;
+  }
+}
+
 aside {
   background-color: #282626;
   width: 50%;
   margin: 0;
   text-align: center;
+}
+@media (max-width: 460px) {
+  aside {
+    width: 100%;
+  }
+}
+@media (max-width: 1020px) {
+  aside {
+    width: 100%;
+  }
 }
 
 aside.profile h4 {
@@ -677,7 +761,8 @@ aside.profile > .container > ul {
   padding: 40px;
 }
 
-aside.profile, aside#styles {
+aside.profile,
+aside#styles {
   padding: 15px 0;
 }
 
@@ -688,8 +773,21 @@ aside#styles > .container {
   flex-direction: column;
   align-items: center;
 }
+@media (max-width: 460px) {
+  aside#styles > .container {
+    display: block;
+    height: auto;
+  }
+}
+@media (max-width: 1020px) {
+  aside#styles > .container {
+    height: auto;
+    margin-left: 150px;
+  }
+}
 
-aside#styles > .container > h2, aside#styles > .container > a {
+aside#styles > .container > h2,
+aside#styles > .container > a {
   border: #282626 solid 2px;
   border-radius: 15px;
   background-color: #ff1717;
@@ -704,6 +802,22 @@ aside#styles > .container > ul.features {
   gap: 3px;
   padding-inline-start: 0;
 }
+@media (max-width: 460px) {
+  aside#styles > .container > ul.features {
+    display: block;
+  }
+}
+@media (max-width: 1020px) {
+  aside#styles > .container > ul.features {
+    display: block;
+  }
+}
+@media (max-width: 1180px) {
+  aside#styles > .container > ul.features {
+    display: block;
+    font-size: small;
+  }
+}
 
 aside#styles li {
   border-radius: 15px;
@@ -711,6 +825,12 @@ aside#styles li {
   max-width: 250px;
   height: 75px;
   background-color: #17e617;
+  margin: 0 auto;
+}
+@media (max-width: 1180px) {
+  aside#styles li {
+    height: 50px;
+  }
 }
 
 aside li {
