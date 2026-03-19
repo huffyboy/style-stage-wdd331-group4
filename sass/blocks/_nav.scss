@@ -1,45 +1,37 @@
 nav {
-  ul {
-    li {
-      transform: rotate(-55deg);
-      font-size: small;
-      padding-bottom: 15px;
+  // Temporary
+  display: none;
+}
 
-      a {
-        text-decoration: none;
-        color: $color-primary-alt;
-      }
-
-      @include breakpoint(medium) {
-        font-size: 5px;
-        transform: rotate(-40deg);
-      }
-
-      @include breakpoint(small) {
-        transform: rotate(0deg);
-      }
-    }
-
-    display: flex;
-    justify-content: space-evenly;
-    list-style: none;
-  }
-
-  padding: 25px;
-  background-color: $color-background;
-
-  @include breakpoint(medium) {
-    padding: 10px;
+// Medium: same as small — keep nav hidden?
+@media (min-width: $bp-medium) {
+  nav {
+    display: none;
   }
 }
 
-@include breakpoint(small) {
+// Wide: default nav styling
+@media (min-width: $bp-wide) {
   nav {
-    ul {
-      display: block;
-      margin: 0;
-    }
+    display: block;
+    padding: 25px;
+    background-color: $color-background;
 
-    text-align: center;
+    ul {
+      display: flex;
+      justify-content: space-evenly;
+      list-style: none;
+
+      li {
+        transform: rotate(-55deg);
+        font-size: small;
+        padding-bottom: 15px;
+
+        a {
+          text-decoration: none;
+          color: $color-primary-alt;
+        }
+      }
+    }
   }
 }
