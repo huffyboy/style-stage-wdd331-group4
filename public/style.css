@@ -153,24 +153,20 @@ body footer.page-footer {
   }
   body nav {
     width: 100%;
-    clip-path: polygon(0% 100%, 100px 0%, 100% 0%, calc(100% - 100px) 100%);
+    clip-path: polygon(100px 0%, 100% 0%, calc(100% - 100px) 100%, 0% 100%);
   }
-  body #about, body #guidelines, body #contribute > section {
+  body main {
     width: calc(100% - 100px);
-  }
-  body main footer {
-    margin-right: 0;
-    clip-path: polygon(0% 0%, calc(100px / 6) 100%, calc(100% - (100px / 1.2)) 100%, calc(100% - 100px) 0%);
   }
   body aside {
     width: 50%;
     margin: 0;
   }
   body aside.profile {
-    clip-path: polygon(calc(100px / 6) 0%, 100px 100%, 100% 100%, 100% 0%);
+    clip-path: polygon(0 0, 101% 0, 101% 100%, 100px 100%);
   }
   body aside#styles {
-    clip-path: polygon(0 0%, 0% 100%, 100% 100%, calc(100% - (100px / 1.2)) 0%);
+    clip-path: polygon(-1% 0, calc(100% - (100px)) 0, 100% 100%, -1% 100%);
   }
   body footer.page-footer {
     margin-left: 100px;
@@ -349,7 +345,7 @@ header .link-github svg path {
     background-color: #000000;
   }
   nav::before {
-    content: "◆ SELECT OPTION ◆";
+    content: "◆ NAVIGATION ◆";
     display: block;
     text-align: center;
     font-size: clamp(0.55rem, 2.5vw, 0.65rem);
@@ -431,11 +427,20 @@ header .link-github svg path {
 
 main {
   color: white;
-  background-color: transparent;
+  background-color: #282626;
+  border: none;
   min-width: 0;
   max-width: 100%;
   overflow-wrap: break-word;
   word-break: break-word;
+}
+@media (min-width: 1020px) {
+  main {
+    border: 0.5rem solid #282626;
+  }
+}
+main > .container {
+  background-color: #000000;
 }
 main a {
   color: #00ffff;
@@ -452,35 +457,6 @@ main h3 {
 }
 main li {
   color: #ffff00;
-}
-
-main footer {
-  background-color: #282626;
-}
-
-#about, #guidelines, #contribute > section {
-  background-color: #000000;
-  min-width: 0;
-  max-width: 100%;
-}
-
-#contribute > section {
-  padding: 1.5rem;
-  border: 10px solid #282626;
-}
-
-#contribute {
-  background: none;
-  padding: 0 !important;
-}
-
-#files .container {
-  display: grid;
-  padding: 10px;
-  margin: 0 10px;
-  grid-template-columns: 1fr 1fr;
-  place-items: center;
-  row-gap: 15px;
 }
 
 @keyframes arcade-nudge {
@@ -699,12 +675,74 @@ main footer {
     padding: 1rem;
   }
 }
-#contribute {
-  padding: 1rem;
+#contribute > section {
+  padding: 1.5rem;
+}
+
+#files {
+  padding: 0.5rem;
+  background-color: #000000;
+}
+#files .container {
+  margin: 0;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#files h3 {
+  margin: 0;
+  font-size: 0;
+  line-height: 0;
+}
+#files h3::before {
+  content: "◆ SOURCE FILES ◆";
+  display: block;
+  text-align: center;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  letter-spacing: 0.2em;
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff, 0 0 16px rgba(0, 255, 255, 0.5);
+  padding-bottom: 1rem;
+}
+#files a {
+  display: block;
+  padding: 0.7rem 1rem;
+  font-size: var(--font-size-small);
+  line-height: 1.4;
+  color: #ffff00;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 3px solid #00b3b3;
+  text-shadow: 0 0 6px rgba(255, 255, 0, 0.65), 1px 1px 0 #000000;
+  transition: color 0.15s ease, border-color 0.15s ease, text-shadow 0.15s ease, transform 0.1s ease;
+}
+#files a::before {
+  content: "↓";
+  display: inline-block;
+  width: 1.35em;
+  text-align: center;
+  margin-right: 1em;
+  color: #00ffff;
+  text-shadow: 0 0 6px #00ffff;
+}
+#files a:hover, #files a:focus-visible {
+  color: #17e617;
+  border-color: #17e617;
+  text-shadow: 0 0 10px #17e617, 0 0 20px rgba(23, 230, 23, 0.45), 1px 1px 0 #000000;
+  transform: translate(1px, 1px);
+}
+#files a:hover::before, #files a:focus-visible::before {
+  color: #17e617;
+  text-shadow: 0 0 8px #17e617;
+}
+#files a:focus-visible {
+  outline: 0;
 }
 
 @media (max-width: 2000px) {
-  footer {
+  .page-footer {
     margin-top: 0;
     padding-top: 0;
     color: #fff;
@@ -712,17 +750,17 @@ main footer {
   }
 }
 @media (max-width: 1020px) {
-  footer {
+  .page-footer {
     background-color: #282626;
     color: #17e617;
   }
 }
-footer div {
+.page-footer div {
   padding: 2em;
   width: 100%;
 }
 @media (max-width: 2000px) {
-  footer ul {
+  .page-footer ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
@@ -733,7 +771,7 @@ footer div {
   }
 }
 @media (max-width: 1020px) {
-  footer ul {
+  .page-footer ul {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -742,38 +780,31 @@ footer div {
     margin: 0;
   }
 }
-footer ul li {
+.page-footer ul li {
   text-decoration: none;
 }
 @media (max-width: 1020px) {
-  footer ul li {
+  .page-footer ul li {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 }
 @media (max-width: 1020px) {
-  footer ul li::before {
+  .page-footer ul li::before {
     content: "▶";
     margin-right: 0.75rem;
     display: inline-block;
     animation: arcade-nudge 3s steps(1) infinite;
   }
 }
-footer p {
+.page-footer p {
   margin-top: 2rem;
 }
-footer a {
+.page-footer a {
   list-style-type: none;
   text-decoration: none;
   color: inherit;
-}
-
-@media (max-width: 1020px) {
-  #files .container {
-    display: flex;
-    margin: 0 -50px;
-  }
 }
 
 aside {
