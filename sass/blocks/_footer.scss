@@ -1,6 +1,6 @@
 // Footer grid layout with 4 columns
 
-footer {
+.page-footer {
   @include breakpoint(large) {
     margin-top:  0;
     padding-top: 0;

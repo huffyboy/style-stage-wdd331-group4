@@ -7,15 +7,25 @@
 
 main {
   color: white;
-  background-color: transparent;
+  background-color: $color-background;
+  border: none;
   min-width: 0;
   max-width: 100%;
   overflow-wrap: break-word;
   word-break: break-word;
 
+  @media (min-width: $bp-medium) {
+    border: 0.5rem solid $color-background;
+  }
+
+  > .container {
+    background-color: $arcade-black;
+  }
+
   a {
     color: $arcade-blue;
   }
+
   a:hover,
   a:focus {
     color: $arcade-green;
@@ -24,41 +34,12 @@ main {
   h2 {
     color: $arcade-green;
   }
+
   h3 {
     color: $arcade-red;
   }
+
   li {
     color: $arcade-yellow;
   }
-}
-
-main footer {
-    background-color: $color-background;
-}
-
-#about, #guidelines, #contribute > section {
-  background-color: $arcade-black;
-  min-width: 0;
-  max-width: 100%;
-}
-
-// #contribute: responsive styles out of scope for main-section pass; left as-is
-
-#contribute > section {
-  padding: $cabinet-edge-margin;
-  border: 10px solid $color-background;
-}
-
-#contribute {
-  background: none;
-  padding: 0 !important;
-}
-
-#files .container {
-  display: grid;
-  padding: 10px;
-  margin: 0 10px;
-  grid-template-columns: 1fr 1fr;
-  place-items: center;
-  row-gap: 15px;
 }
