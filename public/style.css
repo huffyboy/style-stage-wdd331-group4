@@ -342,13 +342,63 @@ header .link-github svg path {
     font-size: var(--font-size-small);
   }
 }
-nav {
-  display: none;
-}
-
-@media (min-width: 1020px) {
+@media (max-width: 1023px) {
   nav {
-    display: none;
+    margin: 0;
+    padding: 0.5rem;
+    background-color: #000000;
+  }
+  nav::before {
+    content: "◆ SELECT OPTION ◆";
+    display: block;
+    text-align: center;
+    font-size: clamp(0.55rem, 2.5vw, 0.65rem);
+    letter-spacing: 0.2em;
+    color: #ff1717;
+    text-shadow: 0 0 8px #ff1717, 0 0 16px rgba(255, 23, 23, 0.5);
+    padding: 0.55rem 0.5rem 0.45rem;
+  }
+  nav ul {
+    margin: 0;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  nav a {
+    display: block;
+    padding: 0.7rem 1rem;
+    font-size: var(--font-size-small);
+    line-height: 1.4;
+    color: #ffff00;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border: 3px solid #00b3b3;
+    text-shadow: 0 0 6px rgba(255, 255, 0, 0.65), 1px 1px 0 #000000;
+    transition: color 0.15s ease, border-color 0.15s ease, text-shadow 0.15s ease, transform 0.1s ease;
+  }
+  nav a::before {
+    content: "▶";
+    display: inline-block;
+    width: 1.35em;
+    text-align: center;
+    margin-right: 1em;
+    color: #00ffff;
+    text-shadow: 0 0 6px #00ffff;
+  }
+  nav a:hover, nav a:focus-visible {
+    color: #17e617;
+    border-color: #17e617;
+    text-shadow: 0 0 10px #17e617, 0 0 20px rgba(23, 230, 23, 0.45), 1px 1px 0 #000000;
+    transform: translate(1px, 1px);
+  }
+  nav a:hover::before, nav a:focus-visible::before {
+    color: #17e617;
+    text-shadow: 0 0 8px #17e617;
+  }
+  nav a:focus-visible {
+    outline: 0;
   }
 }
 @media (min-width: 1024px) {
