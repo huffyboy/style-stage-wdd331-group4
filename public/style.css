@@ -632,7 +632,7 @@ body::after {
 
   pointer-events: none;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   margin-left: 50px;
   margin-bottom: 70px;
 }
