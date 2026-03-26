@@ -5,7 +5,7 @@
   --color-primary-alt: #D9B036;
   --color-secondary: #d92B2B;
   --color-background: #282626;
-  --color-text: rgb(58.975, 76.7015895954, 176.925);
+  --color-text: #3b4db1;
   --color-light: #D9CD2B;
   --color-anchor: #526cff;
   --color-arcade-black: #000000;
@@ -109,7 +109,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
-  margin: 1.5rem;
 }
 body > header {
   width: 100%;
@@ -119,14 +118,13 @@ body nav {
   width: 100%;
 }
 body #about, body #guidelines, body #contribute > section {
-  width: calc(100% - 100px);
-  margin-left: 50px;
+  width: 100%;
 }
 body main footer {
   margin-right: 0;
 }
 body aside {
-  width: 50%;
+  width: 100%;
   margin: 0;
 }
 body aside.profile {
@@ -147,33 +145,32 @@ body footer.page-footer {
 }
 @media (min-width: 1024px) {
   body {
-    margin: 100px;
+    margin: 1.5rem;
   }
   body > header {
-    margin-left: 50px;
-    width: 100%;
+    margin-left: 100px;
+    width: calc(100% - 100px);
   }
   body nav {
     width: 100%;
-    clip-path: polygon(calc(100% - 50px) 100%, 50px 100%, 0% 0%, 100% 0%);
+    clip-path: polygon(100px 0%, 100% 0%, calc(100% - 100px) 100%, 0% 100%);
   }
   body main {
-    width: calc(100% - 50px);
-    margin-left: 20px;
+    width: calc(100% - 100px);
   }
   body aside {
-    width: 100%;
+    width: 50%;
     margin: 0;
   }
   body aside.profile {
-    clip-path: polygon(35px 0%, 0% 100%, 100% 100%, 100% 0%);
+    clip-path: polygon(0 0, 101% 0, 101% 100%, 100px 100%);
   }
   body aside#styles {
-    clip-path: polygon(0 0%, 0% 100%, 100% 100%, calc(100% - 35px) 0%);
+    clip-path: polygon(-1% 0, calc(100% - (100px)) 0, 100% 100%, -1% 100%);
   }
   body footer.page-footer {
-    margin-left: 50px;
-    width: calc(100% - 50px);
+    margin-left: 100px;
+    width: calc(100% - 100px);
   }
 }
 svg {
@@ -181,93 +178,6 @@ svg {
   height: 1em;
 }
 
-/*added the side bars*/
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  margin-left: 0px;
-  margin-right: 0px;
-  height: 100%;
-  width: 75px;
-  background: linear-gradient(to left, rgb(32, 32, 30) 50%, rgb(19, 19, 17) 50%);
-  z-index: -1;
-}
-
-body::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  margin-left: 0px;
-  margin-right: 0px;
-  height: 100%;
-  width: 75px;
-  background: linear-gradient(to left, rgb(19, 19, 17) 50%, rgb(44, 44, 32) 50%);
-  z-index: -1;
-}
-
-body::before {
-  left: 0;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-}
-
-body::after {
-  right: 0;
-  clip-path: polygon(0% 0, 100% 0, 100% 100%, 0 100%);
-}
-
-/*screen overlay*/
-#container {
-  position: relative;
-  overflow: hidden;
-}
-
-#container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 0px, rgba(0, 0, 0, 0.35) 2px, transparent 2px, transparent 4px), radial-gradient(ellipse at center, rgba(64, 145, 238, 0.08) 0%, rgba(0, 0, 0, 0.45) 90%);
-  pointer-events: none;
-  width: 100vw;
-  height: 100%;
-  margin-left: 50px;
-  margin-bottom: 70px;
-}
-
-body {
-  position: relative;
-}
-
-#main:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  width: calc(100% - 150px);
-  margin-left: 75px;
-  margin-top: 540px;
-  height: 115vh;
-  background: repeating-linear-gradient(to bottom, rgba(22, 34, 27, 0.15) 0px, rgba(0, 0, 0, 0.3) 2px, transparent 2px, transparent 4px), radial-gradient(ellipse at center, rgba(44, 120, 155, 0.08) 0%, rgba(255, 255, 255, 0) 90%);
-  pointer-events: none;
-}
-
-@media (max-width: 1020px) {
-  body {
-    background-color: var(--color-background);
-  }
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    background: repeating-linear-gradient(to bottom, rgba(22, 34, 27, 0.15) 0px, rgba(0, 0, 0, 0.3) 2px, transparent 2px, transparent 4px), radial-gradient(ellipse at center, rgba(44, 120, 155, 0.08) 0%, rgba(255, 255, 255, 0) 90%);
-    pointer-events: none;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-  }
-}
 .skip-link {
   position: fixed;
   top: -100px;
@@ -285,7 +195,7 @@ body {
 }
 
 header {
-  padding: 1.5rem;
+  padding: 0.75rem 0.25rem;
   border: none;
   text-align: left;
   background-color: var(--color-primary);
@@ -301,7 +211,6 @@ header .container {
   justify-content: center;
   width: 100%;
   max-width: 100%;
-  padding: 1em;
 }
 header h2 {
   font-size: clamp(0.875rem, 4vw, 1.5rem);
@@ -320,7 +229,7 @@ header a:not(.link-github):hover, header a:not(.link-github):focus {
 }
 header h1 {
   display: block;
-  padding-bottom: 0.15em;
+  padding-bottom: 1rem;
   margin-bottom: 0;
   white-space: nowrap;
   font-size: clamp(1.25rem, 13vw, 2.75rem);
@@ -461,7 +370,7 @@ header .link-github svg path {
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    border: 3px solid rgb(0, 178.5, 178.5);
+    border: 3px solid #00b3b3;
     text-shadow: 0 0 6px rgba(255, 255, 0, 0.65), 1px 1px 0 #000000;
     transition: color 0.15s ease, border-color 0.15s ease, text-shadow 0.15s ease, transform 0.1s ease;
   }
@@ -513,8 +422,7 @@ header .link-github svg path {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  max-width: calc(100%-100px);
-  padding: 1em;
+  max-width: 100%;
 }
 
 main {
@@ -590,13 +498,11 @@ main li {
   list-style: none;
   padding-left: 1rem;
   /* On list hover: switch animation name so all arrows restart from 0% (in sync) */
+  /* The hovered item’s arrow runs (faster) */
 }
 #about .container:nth-child(2) ul:hover li::before {
   animation-name: arcade-nudge-sync;
   animation-play-state: paused;
-}
-#about .container:nth-child(2) ul {
-  /* The hovered item’s arrow runs (faster) */
 }
 #about .container:nth-child(2) ul li:hover::before {
   animation-play-state: running;
@@ -628,7 +534,7 @@ main li {
   height: 180px;
   background-image: url("images/pacman.svg"), url("images/pacman.svg"), url("images/pacman.svg");
   background-size: min(16%, 180px) auto;
-  background-position: 16.6666666667% 50%, 50% 50%, 83.3333333333% 50%;
+  background-position: calc(100% / 6) 50%, 50% 50%, calc(100% * 5 / 6) 50%;
   background-repeat: no-repeat;
   height: 120px;
   margin-top: 1rem;
@@ -665,7 +571,7 @@ main li {
     padding: 0.75rem 0;
   }
   #about .container:nth-child(1),
-  #about .container:nth-child(2) {
+#about .container:nth-child(2) {
     padding: 1rem;
   }
   #about .container:nth-child(2) ul {
@@ -697,16 +603,16 @@ main li {
     padding: 1rem 0;
   }
   #about .container:nth-child(1) {
-    padding: 3rem;
+    padding: 1rem;
   }
   #about .container:nth-child(2) {
-    padding: 3rem;
+    padding: 1rem;
   }
   #about .container:last-of-type::after {
     content: none;
     display: none;
     height: 0;
-    margin: 10;
+    margin: 0;
     background: none;
   }
   #about::after {
@@ -717,7 +623,7 @@ main li {
     height: 180px;
     background-image: url("images/pacman.svg"), url("images/pacman.svg"), url("images/pacman.svg");
     background-size: min(16%, 180px) auto;
-    background-position: 16.6666666667% 50%, 50% 50%, 83.3333333333% 50%;
+    background-position: calc(100% / 6) 50%, 50% 50%, calc(100% * 5 / 6) 50%;
     background-repeat: no-repeat;
     grid-column: 1/-1;
   }
@@ -770,7 +676,7 @@ main li {
   }
 }
 #contribute > section {
-  padding: 100px;
+  padding: 1.5rem;
 }
 
 #files {
@@ -808,7 +714,7 @@ main li {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  border: 3px solid rgb(0, 178.5, 178.5);
+  border: 3px solid #00b3b3;
   text-shadow: 0 0 6px rgba(255, 255, 0, 0.65), 1px 1px 0 #000000;
   transition: color 0.15s ease, border-color 0.15s ease, text-shadow 0.15s ease, transform 0.1s ease;
 }
@@ -1011,5 +917,3 @@ aside#styles li {
 aside li {
   list-style: none;
 }
-
-/*# sourceMappingURL=style.css.map */

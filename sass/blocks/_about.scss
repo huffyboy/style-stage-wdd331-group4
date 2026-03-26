@@ -174,18 +174,18 @@ $about-image-size-small: 48px;
     padding: 1rem 0;
 
     .container:nth-child(1) {
-      padding: 3rem;
+      padding: 1rem;
     }
 
     .container:nth-child(2) {
-      padding: 3rem;
+      padding: 1rem;
     }
 
     .container:last-of-type::after {
       content: none;
       display: none;
       height: 0;
-      margin: 10;
+      margin: 0;
       background: none;
     }
 
