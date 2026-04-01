@@ -62,6 +62,7 @@ body {
 @media (min-width: $bp-wide) {
   body {
     margin: $cabinet-edge-margin;
+    margin-left: $cabinet-inset-left;
 
     > header {
       margin-left: $cabinet-depth;

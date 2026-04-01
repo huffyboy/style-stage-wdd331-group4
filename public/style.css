@@ -146,6 +146,7 @@ body footer.page-footer {
 @media (min-width: 1024px) {
   body {
     margin: 1.5rem;
+    margin-left: 100px;
   }
   body > header {
     margin-left: 100px;
