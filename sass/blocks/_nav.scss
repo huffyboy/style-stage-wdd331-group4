@@ -85,15 +85,25 @@
     padding: 25px;
     background-color: $color-background;
 
+    // For the skew transform
+    container-type: size;
+    min-height: 7.5rem;
+
     ul {
       display: flex;
       justify-content: space-evenly;
       list-style: none;
 
       li {
-        transform: rotate(-55deg);
         font-size: small;
-        padding-bottom: 15px;
+
+        // Rotate the text to the angle of the surface
+        // transform: rotate(-55deg);
+        // padding-bottom: 15px;
+
+        // Slant to the angle of the surface, but adjust to make more readable
+        $skew-adjustment: 0.45;
+        transform: skewX(calc(-1 * #{$skew-adjustment} * atan2(#{$cabinet-side-depth}, max(100cqh, 60px))));
 
         a {
           text-decoration: none;

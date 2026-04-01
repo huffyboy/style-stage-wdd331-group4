@@ -145,8 +145,21 @@ body footer.page-footer {
 }
 @media (min-width: 1024px) {
   body {
+    overflow-x: visible;
+    position: relative;
     margin: 1.5rem;
     margin-left: 100px;
+  }
+  body::before {
+    content: "";
+    position: absolute;
+    z-index: -10;
+    left: calc(1.5rem - 100px);
+    top: 0;
+    bottom: 0;
+    width: calc(200px - 1.5rem/* + 1px*/);
+    background-color: #1e1d1d;
+    clip-path: polygon(0 150px, 100% 0, 100% 100%, 0 calc(100% - 150px));
   }
   body > header {
     margin-left: 100px;
@@ -403,6 +416,8 @@ header .link-github svg path {
     display: block;
     padding: 25px;
     background-color: #282626;
+    container-type: size;
+    min-height: 7.5rem;
   }
   nav ul {
     display: flex;
@@ -410,9 +425,8 @@ header .link-github svg path {
     list-style: none;
   }
   nav ul li {
-    transform: rotate(-55deg);
     font-size: small;
-    padding-bottom: 15px;
+    transform: skewX(calc(-1 * 0.45 * atan2(100px, max(100cqh, 60px))));
   }
   nav ul li a {
     text-decoration: none;
