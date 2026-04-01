@@ -173,10 +173,7 @@ $about-image-size-small: 48px;
     gap: 1rem;
     padding: 1rem 0;
 
-    .container:nth-child(1) {
-      padding: 3rem;
-    }
-
+    .container:nth-child(1),
     .container:nth-child(2) {
       padding: 3rem;
     }
@@ -185,8 +182,7 @@ $about-image-size-small: 48px;
       content: none;
       display: none;
       height: 0;
-      margin: 10;
-      background: none;
+      margin: 0;
     }
 
     &::after {
