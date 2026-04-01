@@ -117,7 +117,9 @@ body > header {
 body nav {
   width: 100%;
 }
-body #about, body #guidelines, body #contribute > section {
+body #about,
+body #guidelines,
+body #contribute > section {
   width: 100%;
 }
 body main footer {
@@ -625,10 +627,8 @@ main li {
     gap: 1rem;
     padding: 1rem 0;
   }
-  #about .container:nth-child(1) {
-    padding: 1rem;
-  }
-  #about .container:nth-child(2) {
+  #about .container:nth-child(1),
+#about .container:nth-child(2) {
     padding: 1rem;
   }
   #about .container:last-of-type::after {
@@ -850,20 +850,48 @@ aside {
 
 aside.profile h4 {
   color: #ffff00;
+  transform: rotate(-0.5deg);
+}
+
+aside.profile > .container > a {
+  transform: rotate(-0.5deg);
 }
 
 aside.profile > .container > ul {
-  background-color: #ff1717;
+  color: #17e617;
   width: 250px;
   height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 0 auto;
-  border-radius: 50%;
   font-size: 12px;
-  padding: 40px;
+  padding-top: 125px;
+  position: relative;
+  transform: rotate(-0.5deg);
+}
+
+aside.profile > .container > ul::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 90px;
+  background: linear-gradient(#444, #111);
+  border-radius: 10px;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.2), 0 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+aside.profile > .container > ul::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ff6666, #b30000);
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: inset 0 5px 8px rgba(255, 255, 255, 0.4), inset 0 -8px 12px rgba(0, 0, 0, 0.6), 0 6px 10px rgba(0, 0, 0, 0.7);
 }
 
 aside.profile,
@@ -887,16 +915,30 @@ aside#styles > .container {
 @media (max-width: calc(1024px - 1px)) {
   aside#styles > .container {
     height: auto;
-    margin-left: 150px;
+    max-width: none;
   }
 }
 
 aside#styles > .container > h2,
 aside#styles > .container > a {
-  border: #282626 solid 2px;
   border-radius: 15px;
-  background-color: #ff1717;
-  padding: 10px;
+  border: #660000 solid 4px;
+  border-radius: 50%;
+  max-width: 250px;
+  height: 75px;
+  padding-top: 15px;
+  padding: 15px;
+  font-size: 0.75rem;
+  background: radial-gradient(circle at 30% 30%, #ff1717, #b30000);
+  margin: 0 auto;
+  display: inline-block;
+  box-shadow: 0 6px 0 #660000, 0 8px 15px rgba(0, 0, 0, 0.5), inset 0 4px 6px rgba(255, 255, 255, 0.4), inset 0 -6px 10px rgba(57, 21, 21, 0.6);
+  cursor: pointer;
+  transform: rotate(-0.5deg);
+}
+
+aside#styles > .container > h2 {
+  font-size: 1.35rem;
 }
 
 aside#styles > .container > ul.features {
@@ -904,15 +946,11 @@ aside#styles > .container > ul.features {
   max-width: 550px;
   grid-template-columns: 1fr 1fr;
   font-size: 15px;
-  gap: 3px;
+  gap: 6px;
   padding-inline-start: 0;
+  margin-bottom: 0;
 }
 @media (max-width: calc(480px - 1px)) {
-  aside#styles > .container > ul.features {
-    display: block;
-  }
-}
-@media (max-width: calc(1024px - 1px)) {
   aside#styles > .container > ul.features {
     display: block;
   }
@@ -926,15 +964,24 @@ aside#styles > .container > ul.features {
 
 aside#styles li {
   border-radius: 15px;
-  border: #282626 solid 2px;
+  border: #124d12 solid 4px;
+  border-radius: 50%;
   max-width: 250px;
   height: 75px;
-  background-color: #17e617;
+  padding-top: 15px;
+  font-size: 0.75rem;
+  background: radial-gradient(circle at 30% 30%, #17e617, #12b912);
   margin: 0 auto;
+  display: inline-block;
+  box-shadow: 0 6px 0 #0d870d, 0 8px 15px rgba(35, 96, 32, 0.5), inset 0 4px 6px rgba(255, 255, 255, 0.4), inset 0 -6px 10px rgba(46, 84, 36, 0.6);
+  cursor: pointer;
+  transform: rotate(-0.5deg);
 }
-@media (max-width: calc(1024px - 1px)) {
+@media (max-width: calc(1275px - 1px)) {
   aside#styles li {
-    height: 50px;
+    max-width: 163px;
+    font-size: 9px;
+    padding-top: 20px;
   }
 }
 

@@ -15,20 +15,55 @@ aside {
 
 aside.profile h4 {
   color: $arcade-yellow;
+  transform: rotate(-.5deg);
+}
+
+aside.profile > .container > a {
+  transform: rotate(-.5deg);
 }
 
 aside.profile > .container > ul {
-  background-color: $arcade-red;
+  color: $arcade-green;
   width: 250px;
   height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 0 auto;
-  border-radius: 50%;
   font-size: 12px;
-  padding: 40px;
+  padding-top: 125px;
+  position: relative;
+  transform: rotate(-.5deg);
+}
+
+aside.profile > .container > ul::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 90px;
+  background: linear-gradient(#444, #111);
+  border-radius: 10px;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  box-shadow:
+    inset 0 0 5px rgba(255,255,255,0.2),
+    0 3px 6px rgba(0,0,0,0.6);
+}
+
+aside.profile > .container > ul::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ff6666, #b30000);
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  box-shadow:
+    inset 0 5px 8px rgba(255,255,255,0.4),
+    inset 0 -8px 12px rgba(0,0,0,0.6),
+    0 6px 10px rgba(0,0,0,0.7);
 }
 
 aside.profile,
@@ -50,16 +85,34 @@ aside#styles > .container {
 
   @include breakpoint(medium) {
     height: auto;
-    margin-left: 150px;
+    max-width: none;
   }
 }
 
 aside#styles > .container > h2,
 aside#styles > .container > a {
-  border: $color-background solid 2px;
   border-radius: 15px;
-  background-color: $arcade-red;
-  padding: 10px;
+  border: #660000 solid 4px;
+  border-radius: 50%;
+  max-width: 250px;
+  height: 75px;
+  padding-top: 15px;
+  padding: 15px;
+  font-size: $font-size-small;
+  background: radial-gradient(circle at 30% 30%, $arcade-red, #b30000);
+  margin: 0 auto;
+  display: inline-block;
+  box-shadow:
+    0 6px 0 #660000,
+    0 8px 15px rgba(0,0,0,0.5),
+    inset 0 4px 6px rgba(255,255,255,0.4),
+    inset 0 -6px 10px rgba(57, 21, 21, 0.6);
+  cursor: pointer;
+  transform: rotate(-.5deg);
+}
+
+aside#styles > .container > h2 {
+  font-size: $font-size-h4;
 }
 
 aside#styles > .container > ul.features {
@@ -67,14 +120,11 @@ aside#styles > .container > ul.features {
   max-width: 550px;
   grid-template-columns: 1fr 1fr;
   font-size: 15px;
-  gap: 3px;
+  gap: 6px;
   padding-inline-start: 0;
+  margin-bottom: 0;
 
   @include breakpoint(small) {
-    display: block;
-  }
-
-  @include breakpoint(medium) {
     display: block;
   }
 
@@ -86,14 +136,26 @@ aside#styles > .container > ul.features {
 
 aside#styles li {
   border-radius: 15px;
-  border: $color-background solid 2px;
+  border: #124d12 solid 4px;
+  border-radius: 50%;
   max-width: 250px;
   height: 75px;
-  background-color: $arcade-green;
+  padding-top: 15px;
+  font-size: $font-size-small;
+  background: radial-gradient(circle at 30% 30%, $arcade-green, #12b912);
   margin: 0 auto;
-
-  @include breakpoint(medium) {
-    height: 50px;
+  display: inline-block;
+  box-shadow:
+    0 6px 0 #0d870d,
+    0 8px 15px rgba(35, 96, 32, 0.5),
+    inset 0 4px 6px rgba(255, 255, 255, 0.4),
+    inset 0 -6px 10px rgba(46, 84, 36, 0.6);
+  cursor: pointer;
+  transform: rotate(-.5deg);
+  @include breakpoint(nav-wide) {
+    max-width: 163px;
+    font-size: 9px;
+    padding-top: 20px;
   }
 }
 
