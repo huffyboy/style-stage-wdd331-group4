@@ -109,10 +109,6 @@
         a {
           text-decoration: none;
           color: $color-primary-alt;
-          transition:
-            color 0.2s ease,
-            text-shadow 0.2s ease,
-            transform 0.2s ease;
 
           &:hover,
           &:focus-visible {
