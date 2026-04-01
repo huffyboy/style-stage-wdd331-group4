@@ -114,7 +114,6 @@
           &:focus-visible {
             color: mix(#fff, $color-primary-alt, 50%);
             text-shadow:
-              // 0 0 50px rgba($color-primary-alt, 0.65);
               0 0 25px rgba($color-primary-alt, 0.95),
               0 0 50px rgba($color-primary-alt, 0.65),
               0 0 75px rgba($color-primary-alt, 0.35);
