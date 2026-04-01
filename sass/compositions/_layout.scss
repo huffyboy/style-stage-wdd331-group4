@@ -1,7 +1,14 @@
 // Space at the edge of the screen, outside the cabinet (viewport → cabinet gap)
 $cabinet-edge-margin: 1.5rem;
-// Width of the cabinet's side (3D "thickness" that insets content from the cabinet frame)
-$cabinet-side-width: 100px;
+
+// Distance from cabinet edge to the cabinet screen
+$cabinet-inset-left: 100px;
+
+// Visual depth for the top and bottom of the cabinet (3D offset)
+$cabinet-depth: 100px;
+
+// Total width of the left side (full left width for top/bottom)
+$cabinet-left-width: $cabinet-inset-left + $cabinet-depth;
 
 body {
   display: flex;
@@ -57,22 +64,22 @@ body {
     margin: $cabinet-edge-margin;
 
     > header {
-      margin-left: $cabinet-side-width;
-      width: calc(100% - #{$cabinet-side-width});
+      margin-left: $cabinet-depth;
+      width: calc(100% - #{$cabinet-depth});
     }
 
     nav {
       width: 100%;
       clip-path: polygon(
-        $cabinet-side-width 0%,
+        $cabinet-depth 0%,
         100% 0%,
-        calc(100% - #{$cabinet-side-width}) 100%,
+        calc(100% - #{$cabinet-depth}) 100%,
         0% 100%
       );
     }
 
     main {
-      width: calc(100% - #{$cabinet-side-width});
+      width: calc(100% - #{$cabinet-depth});
     }
 
     aside {
@@ -85,14 +92,14 @@ body {
           0 0,
           101% 0,
           101% 100%,
-          $cabinet-side-width 100%
+          $cabinet-depth 100%
         );
       }
 
       &#styles {
         clip-path: polygon(
           -1% 0,
-          calc(100% - (#{$cabinet-side-width})) 0,
+          calc(100% - (#{$cabinet-depth})) 0,
           100% 100%,
           -1% 100%
         );
@@ -100,8 +107,8 @@ body {
     }
 
     footer.page-footer {
-      margin-left: $cabinet-side-width;
-      width: calc(100% - #{$cabinet-side-width});
+      margin-left: $cabinet-depth;
+      width: calc(100% - #{$cabinet-depth});
     }
   }
 }
