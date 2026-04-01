@@ -175,7 +175,7 @@ $about-image-size-small: 48px;
 
     .container:nth-child(1),
     .container:nth-child(2) {
-      padding: 1rem;
+      padding: 3rem;
     }
 
     .container:last-of-type::after {
@@ -183,7 +183,6 @@ $about-image-size-small: 48px;
       display: none;
       height: 0;
       margin: 0;
-      background: none;
     }
 
     &::after {
