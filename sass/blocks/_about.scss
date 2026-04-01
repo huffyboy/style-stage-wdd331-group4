@@ -173,10 +173,7 @@ $about-image-size-small: 48px;
     gap: 1rem;
     padding: 1rem 0;
 
-    .container:nth-child(1) {
-      padding: 1rem;
-    }
-
+    .container:nth-child(1),
     .container:nth-child(2) {
       padding: 1rem;
     }
