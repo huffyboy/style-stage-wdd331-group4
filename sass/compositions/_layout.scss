@@ -1,5 +1,16 @@
 // Space at the edge of the screen, outside the cabinet (viewport → cabinet gap)
-$cabinet-edge-margin: 100px;
+$cabinet-edge-margin: 1.5rem;
+
+// Distance from cabinet edge to the cabinet screen
+$cabinet-inset-left: 100px;
+
+// Visual depth for the top and bottom of the cabinet (3D offset)
+$cabinet-side-depth: 100px;
+$cabinet-height-depth: 150px;
+
+// Total width of the left side (full left width for top/bottom)
+$cabinet-left-width: $cabinet-inset-left + $cabinet-side-depth;
+
 // Width of the cabinet's side (3D "thickness" that insets content from the cabinet frame)
 $cabinet-side-width: 50px;
 $cabinet-side-width-2: 35px;
@@ -58,7 +69,28 @@ body {
 // Wide: 1024px and up — cabinet layout with inset and clip-paths
 @media (min-width: $bp-wide) {
   body {
+    overflow-x: visible;
+    position: relative;
     margin: $cabinet-edge-margin;
+    margin-left: $cabinet-inset-left;
+
+    // Left side of the cabinet
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -10;
+      left: calc(#{$cabinet-edge-margin} - #{$cabinet-inset-left});
+      top: 0;
+      bottom: 0;
+      width: calc(#{$cabinet-left-width} - #{$cabinet-edge-margin}/* + 1px*/);
+      background-color: $color-cabinet-side;
+      clip-path: polygon(
+        0 $cabinet-height-depth,
+        100% 0,
+        100% 100%,
+        0 calc(100% - #{$cabinet-height-depth})
+      );
+    }
 
     > header {
       margin-left: $cabinet-side-width;
@@ -104,8 +136,8 @@ body {
     }
 
     footer.page-footer {
-      margin-left: $cabinet-side-width;
-      width: calc(100% - #{$cabinet-side-width});
+      margin-left: $cabinet-side-depth;
+      width: calc(100% - #{$cabinet-side-depth});
     }
   }
 }

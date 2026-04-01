@@ -10,9 +10,9 @@ $about-image-size-small: 48px;
   margin-top: 1.5rem;
   height: $about-image-row-height;
   background-image:
-    url("images/pacman.svg"),
-    url("images/pacman.svg"),
-    url("images/pacman.svg");
+    url("images/blinky.svg"),
+    url("images/inky.svg"),
+    url("images/clyde.svg");
   background-size: unquote('min(16%, #{$about-image-row-height})') auto;
   background-position: calc(100% / 6) 50%, 50% 50%, calc(100% * 5 / 6) 50%;
   background-repeat: no-repeat;
