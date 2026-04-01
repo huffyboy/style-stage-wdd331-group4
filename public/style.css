@@ -413,8 +413,9 @@ header .link-github svg path {
 }
 @media (min-width: 1024px) {
   nav {
-    display: block;
-    padding: 25px;
+    display: grid;
+    align-content: center;
+    padding: 25px 35px;
     background-color: #282626;
     container-type: size;
     min-height: 7.5rem;
@@ -425,12 +426,20 @@ header .link-github svg path {
     list-style: none;
   }
   nav ul li {
-    font-size: small;
+    font-size: clamp(0.8125rem, 1.05vw, 1.5rem);
     transform: skewX(calc(-1 * 0.45 * atan2(100px, max(100cqh, 60px))));
   }
   nav ul li a {
     text-decoration: none;
     color: #D9B036;
+    transition: color 0.2s ease, text-shadow 0.2s ease, transform 0.2s ease;
+  }
+  nav ul li a:hover, nav ul li a:focus-visible {
+    color: #ecd89b;
+    text-shadow: 0 0 25px rgba(217, 176, 54, 0.95), 0 0 50px rgba(217, 176, 54, 0.65), 0 0 75px rgba(217, 176, 54, 0.35);
+    text-decoration: underline;
+    text-decoration-color: #eedba5;
+    transform: scale(1.06);
   }
 }
 #main .container {

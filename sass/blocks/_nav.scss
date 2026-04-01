@@ -81,8 +81,9 @@
 // Wide: exact copy of main branch nav — no mobile styles apply here
 @media (min-width: $bp-wide) {
   nav {
-    display: block;
-    padding: 25px;
+    display: grid;
+    align-content: center;
+    padding: 25px 35px;
     background-color: $color-background;
 
     // For the skew transform
@@ -95,7 +96,7 @@
       list-style: none;
 
       li {
-        font-size: small;
+        font-size: clamp(0.8125rem, 1.05vw, 1.5rem);
 
         // Rotate the text to the angle of the surface
         // transform: rotate(-55deg);
@@ -108,6 +109,23 @@
         a {
           text-decoration: none;
           color: $color-primary-alt;
+          transition:
+            color 0.2s ease,
+            text-shadow 0.2s ease,
+            transform 0.2s ease;
+
+          &:hover,
+          &:focus-visible {
+            color: mix(#fff, $color-primary-alt, 50%);
+            text-shadow:
+              // 0 0 50px rgba($color-primary-alt, 0.65);
+              0 0 25px rgba($color-primary-alt, 0.95),
+              0 0 50px rgba($color-primary-alt, 0.65),
+              0 0 75px rgba($color-primary-alt, 0.35);
+            text-decoration: underline;
+            text-decoration-color: mix(#fff, $color-primary-alt, 55%);
+            transform: scale(1.06);
+          }
         }
       }
     }
