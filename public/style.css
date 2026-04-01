@@ -145,7 +145,21 @@ body footer.page-footer {
 }
 @media (min-width: 1024px) {
   body {
+    overflow-x: visible;
+    position: relative;
     margin: 1.5rem;
+    margin-left: 100px;
+  }
+  body::before {
+    content: "";
+    position: absolute;
+    z-index: -10;
+    left: calc(1.5rem - 100px);
+    top: 0;
+    bottom: 0;
+    width: calc(200px - 1.5rem/* + 1px*/);
+    background-color: #1e1d1d;
+    clip-path: polygon(0 150px, 100% 0, 100% 100%, 0 calc(100% - 150px));
   }
   body > header {
     margin-left: 100px;
@@ -399,9 +413,12 @@ header .link-github svg path {
 }
 @media (min-width: 1024px) {
   nav {
-    display: block;
-    padding: 25px;
+    display: grid;
+    align-content: center;
+    padding: 25px 35px;
     background-color: #282626;
+    container-type: size;
+    min-height: 7.5rem;
   }
   nav ul {
     display: flex;
@@ -409,13 +426,19 @@ header .link-github svg path {
     list-style: none;
   }
   nav ul li {
-    transform: rotate(-55deg);
-    font-size: small;
-    padding-bottom: 15px;
+    font-size: clamp(0.8125rem, 1.05vw, 1.5rem);
+    transform: skewX(calc(-1 * 0.45 * atan2(100px, max(100cqh, 60px))));
   }
   nav ul li a {
     text-decoration: none;
     color: #D9B036;
+  }
+  nav ul li a:hover, nav ul li a:focus-visible {
+    color: #ecd89b;
+    text-shadow: 0 0 25px rgba(217, 176, 54, 0.95), 0 0 50px rgba(217, 176, 54, 0.65), 0 0 75px rgba(217, 176, 54, 0.35);
+    text-decoration: underline;
+    text-decoration-color: #eedba5;
+    transform: scale(1.06);
   }
 }
 #main .container {
@@ -532,7 +555,7 @@ main li {
   width: 100%;
   margin-top: 1.5rem;
   height: 180px;
-  background-image: url("images/pacman.svg"), url("images/pacman.svg"), url("images/pacman.svg");
+  background-image: url("images/blinky.svg"), url("images/inky.svg"), url("images/clyde.svg");
   background-size: min(16%, 180px) auto;
   background-position: calc(100% / 6) 50%, 50% 50%, calc(100% * 5 / 6) 50%;
   background-repeat: no-repeat;
@@ -621,7 +644,7 @@ main li {
     width: 100%;
     margin-top: 1.5rem;
     height: 180px;
-    background-image: url("images/pacman.svg"), url("images/pacman.svg"), url("images/pacman.svg");
+    background-image: url("images/blinky.svg"), url("images/inky.svg"), url("images/clyde.svg");
     background-size: min(16%, 180px) auto;
     background-position: calc(100% / 6) 50%, 50% 50%, calc(100% * 5 / 6) 50%;
     background-repeat: no-repeat;
@@ -745,6 +768,7 @@ main li {
   .page-footer {
     margin-top: 0;
     padding-top: 0;
+    min-height: 600px;
     color: #fff;
     background-color: #282626;
   }
