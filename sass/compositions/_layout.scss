@@ -85,11 +85,21 @@ body {
 
       // Overlap seam by 1% to avoid rounding gap between asides
       &.profile {
-        clip-path: polygon($cabinet-side-width-2 0%, 0% 100%, 100% 100%, 100% 0%);
+        clip-path: polygon(
+          $cabinet-side-width-2 0%,
+          0% 100%,
+          100% 100%,
+          100% 0%
+        );
       }
 
       &#styles {
-        clip-path:  polygon(0 0%, 0% 100%, 100% 100%, calc(100% - $cabinet-side-width-2) 0%);
+        clip-path:  polygon(
+          0 0%,
+          0% 100%,
+          100% 100%,
+          calc(100% - $cabinet-side-width-2) 0%
+        );
       }
     }
 
@@ -116,8 +126,11 @@ body::before {
   margin-right: 0px;
   height: 100%;
   width: 75px;
-  background: linear-gradient(to left, rgb(32, 32, 30)
- 50%, rgba(19, 19, 17, 1) 50%);
+  background: linear-gradient(
+    to left,
+    rgb(32, 32, 30) 50%,
+    rgba(19, 19, 17, 1) 50%
+  );
   z-index: -1;
 
 }
