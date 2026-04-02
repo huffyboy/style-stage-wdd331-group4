@@ -1,66 +1,89 @@
-// Footer grid layout with 4 columns
+// -----------------------------------------------------------------------------
+// Page footer
+// -----------------------------------------------------------------------------
 
 .page-footer {
   @include breakpoint(wide) {
-    margin-top:  0;
+    margin-top: 0;
     padding-top: 0;
     min-height: 600px;
-    color:#fff;
-    background-color: $color-background;
+    color: #fff;
+    background-color: $color-cabinet-bottom;
   }
+
   @include breakpoint(medium) {
-    background-color: $color-background;
+    background-color: $arcade-black;
     color: $arcade-green;
   }
-  div {
+
+  > .container {
     padding: 2em;
     width: 100%;
+
+    > p:first-child {
+      margin-bottom: 5rem;
+
+      @include breakpoint(medium) {
+        margin-bottom: 2.5rem;
+      }
+    }
   }
+
   ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
     @include breakpoint(wide) {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      background-color: --color-background;
+      // background-color: $color-background;
     }
+
     @include breakpoint(medium) {
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      list-style: none;
-      padding: 0;
-      margin: 0;
+      margin-bottom: 2.5rem;
     }
 
     li {
-      text-decoration: none;
-
       @include breakpoint(medium) {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-      }
-    }
+        justify-content: flex-start;
 
-    li::before {
-      @include breakpoint(medium) {
-        content: "▶";
-        margin-right: 0.75rem;
-        display: inline-block;
-        animation: arcade-nudge 3s steps(1) infinite;
+        &::before {
+          content: "▶";
+          display: block;
+          flex-shrink: 0;
+          margin-left: 2rem;
+          margin-right: 0.75rem;
+          color: $arcade-blue;
+          animation: arcade-nudge 3s steps(1) infinite;
+        }
       }
     }
   }
+
   p {
     margin-top: 2rem;
   }
+
+  // Match aside.profile link colors
   a {
-    list-style-type: none;
     text-decoration: none;
-    color: inherit;
+    color: $arcade-blue;
+
+    &:hover {
+      color: $arcade-green;
+    }
+  }
+
+  .link-github svg,
+  .link-github svg path {
+    fill: currentColor;
   }
 }
-

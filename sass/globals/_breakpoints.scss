@@ -1,10 +1,15 @@
 // Three sizes : small < 480px, medium 480–1023px, wide 1024px+
+$bp-wide-nav: 1250px;
 $bp-medium: 480px;
 $bp-wide: 1024px;
 
 @mixin breakpoint($break) {
   @if $break == wide {
     @media (min-width: $bp-wide) {
+      @content;
+    }
+  }@else if $break == nav-wide {
+    @media (min-width: calc(#{$bp-wide} - 1px)) and (max-width: calc(#{$bp-wide-nav} - 1px)) {
       @content;
     }
   } @else if $break == medium {

@@ -1,12 +1,7 @@
 body {
   color: $color-background;
-  background-color: $color-background;
-}
-
-@media (min-width: $bp-medium) {
-  body {
-    background-color: $color-background;
-  }
+  // True black below wide layout; gray + gold only on desktop cabinet view
+  background-color: $arcade-black;
 }
 
 @media (min-width: $bp-wide) {
