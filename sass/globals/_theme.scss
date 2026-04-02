@@ -2,7 +2,8 @@ $color-primary: #526cff;
 $color-primary-alt: #D9B036;
 $color-secondary: #d92B2B;
 $color-background: #282626;
-$color-cabinet-side: scale-color($color-background, $lightness: -25%);
+$color-cabinet-side: scale-color($color-background, $lightness: -50%);
+$color-cabinet-bottom: scale-color($color-background, $lightness: -20%);
 
 // Arcade screen palette
 $arcade-yellow: #ffff00;

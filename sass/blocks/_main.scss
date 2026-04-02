@@ -7,14 +7,29 @@
 
 main {
   color: white;
-  background-color: $color-background;
+  background-color: $arcade-black;
   border: none;
   min-width: 0;
   max-width: 100%;
   overflow-wrap: break-word;
   word-break: break-word;
 
+  @include breakpoint(medium) {
+    padding-inline: 1rem;
+    padding-block: 0.75rem;
+  }
+
+  @include breakpoint(small) {
+    padding-inline: 1.5rem;
+    padding-block: 1rem;
+  }
+
   @media (min-width: $bp-medium) {
+    border: 0.5rem solid $arcade-black;
+  }
+
+  @media (min-width: $bp-wide) {
+    background-color: $color-background;
     border: 0.5rem solid $color-background;
   }
 

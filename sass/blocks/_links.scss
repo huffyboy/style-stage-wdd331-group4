@@ -1,164 +1,252 @@
+// -----------------------------------------------------------------------------
+// Aside — base
+// -----------------------------------------------------------------------------
 aside {
-  background-color: $color-background;
-  width: 50%;
+  background-color: $arcade-black;
   margin: 0;
   text-align: center;
+  width: 50%;
 
-  @include breakpoint(small) {
-    width: 100%;
+  @media (min-width: $bp-wide) {
+    background-color: $color-background;
   }
 
   @include breakpoint(medium) {
     width: 100%;
   }
+
+  li {
+    list-style: none;
+  }
 }
 
-aside.profile h4 {
-  color: $arcade-yellow;
-  transform: rotate(-.5deg);
+// -----------------------------------------------------------------------------
+// Aside — profile block
+// -----------------------------------------------------------------------------
+aside.profile {
+  padding: 15px 0;
+
+  a {
+    color: $arcade-blue;
+
+    &:hover {
+      color: $arcade-green;
+    }
+  }
+
+  h4 {
+    color: $arcade-yellow;
+    font-size: $font-size-h3;
+    transform: rotate(-0.5deg);
+  }
+
+  > .container > a {
+    position: relative;
+    top: 50px;
+    left: 25px;
+    transform: rotate(-0.5deg);
+  }
+
+  > .container > ul {
+    color: white;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    font-size: 12px;
+    padding-top: 150px;
+    position: relative;
+    transform: rotate(-0.5deg);
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 90px;
+      background: linear-gradient(#444, #111);
+      border-radius: 10px;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow:
+        inset 0 0 5px rgba(255, 255, 255, 0.2),
+        0 3px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #ff6666, #b30000);
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow:
+        inset 0 5px 8px rgba(255, 255, 255, 0.4),
+        inset 0 -8px 12px rgba(0, 0, 0, 0.6),
+        0 6px 10px rgba(0, 0, 0, 0.7);
+    }
+  }
 }
 
-aside.profile > .container > a {
-  transform: rotate(-.5deg);
-}
-
-aside.profile > .container > ul {
-  color: $arcade-green;
-  width: 250px;
-  height: 250px;
-  margin: 0 auto;
-  font-size: 12px;
-  padding-top: 125px;
-  position: relative;
-  transform: rotate(-.5deg);
-}
-
-aside.profile > .container > ul::before {
-  content: "";
-  position: absolute;
-  width: 14px;
-  height: 90px;
-  background: linear-gradient(#444, #111);
-  border-radius: 10px;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  box-shadow:
-    inset 0 0 5px rgba(255,255,255,0.2),
-    0 3px 6px rgba(0,0,0,0.6);
-}
-
-aside.profile > .container > ul::after {
-  content: "";
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #ff6666, #b30000);
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  box-shadow:
-    inset 0 5px 8px rgba(255,255,255,0.4),
-    inset 0 -8px 12px rgba(0,0,0,0.6),
-    0 6px 10px rgba(0,0,0,0.7);
-}
-
-aside.profile,
+// -----------------------------------------------------------------------------
+// Aside — featured styles (#styles)
+// -----------------------------------------------------------------------------
 aside#styles {
   padding: 15px 0;
-}
-
-aside#styles > .container {
-  max-width: 510px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  @include breakpoint(small) {
-    display: block;
-    height: auto;
-  }
 
   @include breakpoint(medium) {
-    height: auto;
-    max-width: none;
-  }
-}
-
-aside#styles > .container > h2,
-aside#styles > .container > a {
-  border-radius: 15px;
-  border: #660000 solid 4px;
-  border-radius: 50%;
-  max-width: 250px;
-  height: 75px;
-  padding-top: 15px;
-  padding: 15px;
-  font-size: $font-size-small;
-  background: radial-gradient(circle at 30% 30%, $arcade-red, #b30000);
-  margin: 0 auto;
-  display: inline-block;
-  box-shadow:
-    0 6px 0 #660000,
-    0 8px 15px rgba(0,0,0,0.5),
-    inset 0 4px 6px rgba(255,255,255,0.4),
-    inset 0 -6px 10px rgba(57, 21, 21, 0.6);
-  cursor: pointer;
-  transform: rotate(-.5deg);
-}
-
-aside#styles > .container > h2 {
-  font-size: $font-size-h4;
-}
-
-aside#styles > .container > ul.features {
-  display: grid;
-  max-width: 550px;
-  grid-template-columns: 1fr 1fr;
-  font-size: 15px;
-  gap: 6px;
-  padding-inline-start: 0;
-  margin-bottom: 0;
-
-  @include breakpoint(small) {
-    display: block;
+    margin-top: 100px;
   }
 
-  @include breakpoint(medium) {
-    display: block;
-    font-size: small;
-  }
-}
+  > .container {
+    max-width: 510px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-aside#styles li {
-  border-radius: 15px;
-  border: #124d12 solid 4px;
-  border-radius: 50%;
-  max-width: 250px;
-  height: 75px;
-  padding-top: 15px;
-  font-size: $font-size-small;
-  background: radial-gradient(circle at 30% 30%, $arcade-green, #12b912);
-  margin: 0 auto;
-  display: inline-block;
-  box-shadow:
-    0 6px 0 #0d870d,
-    0 8px 15px rgba(35, 96, 32, 0.5),
-    inset 0 4px 6px rgba(255, 255, 255, 0.4),
-    inset 0 -6px 10px rgba(46, 84, 36, 0.6);
-  cursor: pointer;
-  transform: rotate(-.5deg);
-  @include breakpoint(nav-wide) {
-    max-width: 163px;
-    font-size: 9px;
-    padding-top: 20px;
-  }
-}
+    @include breakpoint(wide) {
+      height: 400px;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      grid-template-columns: 1fr;
+      align-items: stretch;
+      justify-items: stretch;
 
-aside li {
-  list-style: none;
+      > h2 {
+        grid-row: 1;
+        justify-self: center;
+      }
+
+      > ul.features {
+        grid-row: 2;
+        grid-column: 1;
+        justify-self: center;
+        align-self: start;
+      }
+
+      > a {
+        grid-row: 2;
+        grid-column: 1;
+        justify-self: end;
+        align-self: end;
+      }
+    }
+
+    @include breakpoint(small) {
+      display: block;
+      height: auto;
+    }
+
+    @include breakpoint(medium) {
+      height: auto;
+      max-width: none;
+    }
+
+    > h2 {
+      font-size: $font-size-h3;
+      color: $arcade-yellow;
+    }
+
+    > ul.features {
+      display: grid;
+      max-width: 550px;
+      grid-template-columns: 1fr 1fr;
+      font-size: 15px;
+      gap: 6px;
+      padding-inline-start: 0;
+      margin-bottom: 0;
+    }
+
+    > a {
+      position: relative;
+      top: -112px;
+      border: #660000 solid 4px;
+      border-radius: 50%;
+      max-width: 250px;
+      height: 75px;
+      padding: 15px;
+      padding-top: 20px;
+      font-size: $font-size-small;
+      background: radial-gradient(circle at 30% 30%, $arcade-red, #b30000);
+      display: inline-block;
+      box-shadow:
+        0 6px 0 #660000,
+        0 8px 15px rgba(0, 0, 0, 0.5),
+        inset 0 4px 6px rgba(255, 255, 255, 0.4),
+        inset 0 -6px 10px rgba(57, 21, 21, 0.6);
+      cursor: pointer;
+      transform: rotate(-0.5deg);
+      text-decoration: none;
+      color: black;
+
+      &:hover {
+        transform: translateY(6px) rotate(-0.5deg);
+        background: radial-gradient(
+          circle at 50% 50%,
+          #dc0707,
+          #a70505
+        );
+      }
+
+      @include breakpoint(wide) {
+        margin: 0;
+      }
+
+      @include breakpoint(medium) {
+        left: 135px;
+      }
+
+      // @include breakpoint(small) {
+      //   // left: -50px;
+      //   // align-self: unset;
+      //   // margin: 0 auto;
+      // }
+    }
+  }
+
+  li > span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > span {
+      color: white;
+    }
+
+    > a {
+      color: black;
+      background: radial-gradient(circle at 30% 30%, $arcade-green, #12b912);
+      border: #124d12 solid 4px;
+      border-radius: 50%;
+      width: 210px;
+      height: 75px;
+      padding-top: 20px;
+      font-size: $font-size-small;
+      margin: 0 auto 20px;
+      display: inline-block;
+      cursor: pointer;
+      text-decoration: none;
+      transform: rotate(-0.5deg);
+      box-shadow:
+        0 6px 0 #0d870d,
+        0 8px 15px rgba(35, 96, 32, 0.5),
+        inset 0 4px 6px rgba(255, 255, 255, 0.4),
+        inset 0 -6px 10px rgba(46, 84, 36, 0.6);
+
+      &:hover {
+        transform: translateY(6px) rotate(-0.5deg);
+        background: radial-gradient(
+          circle at 50% 50%,
+          #12b912,
+          #0f490f
+        );
+      }
+    }
+  }
 }

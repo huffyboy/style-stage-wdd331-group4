@@ -6,12 +6,23 @@
     padding-top: 0;
     min-height: 600px;
     color:#fff;
-    background-color: $color-background;
+    // darken the background color
+    background-color: $color-cabinet-bottom;
   }
   @include breakpoint(medium) {
-    background-color: $color-background;
+    background-color: $arcade-black;
     color: $arcade-green;
   }
+
+  .container > p:first-child {
+    margin-bottom: 5rem;
+
+    @include breakpoint(medium) {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+
   div {
     padding: 2em;
     width: 100%;
@@ -26,6 +37,7 @@
       margin: 0;
       background-color: --color-background;
     }
+
     @include breakpoint(medium) {
       display: flex;
       flex-direction: column;
@@ -33,6 +45,7 @@
       list-style: none;
       padding: 0;
       margin: 0;
+      margin-bottom: 2.5rem;
     }
 
     li {
@@ -40,17 +53,21 @@
 
       @include breakpoint(medium) {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        justify-content: flex-start;
       }
     }
 
     li::before {
       @include breakpoint(medium) {
         content: "▶";
+        flex-shrink: 0;
         margin-right: 0.75rem;
-        display: inline-block;
+        display: block;
         animation: arcade-nudge 3s steps(1) infinite;
+        margin-left: 2rem;
+        color: $arcade-blue;
       }
     }
   }
@@ -60,7 +77,16 @@
   a {
     list-style-type: none;
     text-decoration: none;
-    color: inherit;
+    color: $arcade-blue;
+
+    &:hover {
+      color: $arcade-green;
+    }
+  }
+
+  .link-github svg,
+  .link-github svg path {
+    fill: currentColor;
   }
 }
 
