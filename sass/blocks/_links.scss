@@ -118,9 +118,18 @@ aside#styles {
       align-items: stretch;
       justify-items: stretch;
 
+      @include breakpoint(nav-wide) {
+        display: flex;
+      }
+
       > h2 {
         grid-row: 1;
         justify-self: center;
+
+        @include breakpoint(nav-wide) {
+          text-align: left;
+          padding-left: 15px;
+        }
       }
 
       > ul.features {
@@ -161,6 +170,9 @@ aside#styles {
       gap: 6px;
       padding-inline-start: 0;
       margin-bottom: 0;
+      @include breakpoint(nav-wide) {
+        max-width: 300px;
+      }
     }
 
     > a {
@@ -202,11 +214,11 @@ aside#styles {
         left: 135px;
       }
 
-      // @include breakpoint(small) {
-      //   // left: -50px;
-      //   // align-self: unset;
-      //   // margin: 0 auto;
-      // }
+      @include breakpoint(nav-wide) {
+        width: 185px;
+        top: -140px;
+        left: -75px;
+      }
     }
   }
 
@@ -246,6 +258,10 @@ aside#styles {
           #12b912,
           #0f490f
         );
+      }
+
+      @include breakpoint(nav-wide) {
+        width: 185px;
       }
     }
   }
