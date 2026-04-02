@@ -9,7 +9,7 @@ $bp-wide: 1024px;
       @content;
     }
   }@else if $break == nav-wide {
-    @media (max-width: calc(#{$bp-wide-nav} - 1px)) {
+    @media (min-width: calc(#{$bp-wide} - 1px)) and (max-width: calc(#{$bp-wide-nav} - 1px)) {
       @content;
     }
   } @else if $break == medium {
